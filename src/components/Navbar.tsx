@@ -5,9 +5,10 @@ import logoImg from '../assets/logo.svg';
 interface NavbarProps {
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
+  onNavigateToPrivacy?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
+export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigateToPrivacy }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -50,7 +51,13 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
           <a href="#features" className="hover:text-violet-400 transition-colors">Features</a>
           <a href="#timeline-demo" className="hover:text-violet-400 transition-colors">Timeline</a>
           <a href="#ai-experience" className="hover:text-violet-400 transition-colors">Local AI</a>
-          <a href="#privacy" className="hover:text-violet-400 transition-colors">Privacy</a>
+          <a
+            href="#privacy-policy"
+            onClick={() => onNavigateToPrivacy && onNavigateToPrivacy()}
+            className="hover:text-violet-400 transition-colors flex items-center gap-1 text-emerald-400 font-semibold"
+          >
+            <span>Privacy Policy</span>
+          </a>
           <a href="#pricing" className="hover:text-violet-400 transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-violet-400 transition-colors">FAQ</a>
           <a href="#downloads" className="hover:text-violet-400 transition-colors">Downloads</a>
@@ -89,3 +96,4 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
     </nav>
   );
 };
+

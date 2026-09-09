@@ -1,7 +1,11 @@
 import React from 'react';
 import { Shield, Github, Lock, Heart } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigateToPrivacy?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy }) => {
   return (
     <footer className="py-16 px-6 max-w-7xl mx-auto border-t border-white/10 text-gray-400 font-sans text-xs">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
@@ -23,7 +27,14 @@ export const Footer: React.FC = () => {
           <a href="#features" className="hover:text-white transition-colors">Features</a>
           <a href="#timeline-demo" className="hover:text-white transition-colors">Timeline</a>
           <a href="#ai-experience" className="hover:text-white transition-colors">Local AI</a>
-          <a href="#privacy" className="hover:text-white transition-colors">Privacy</a>
+          <a
+            href="#privacy-policy"
+            onClick={() => onNavigateToPrivacy && onNavigateToPrivacy()}
+            className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-1"
+          >
+            <Shield className="w-3.5 h-3.5" />
+            <span>Privacy Policy</span>
+          </a>
           <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           <a href="#downloads" className="hover:text-white transition-colors">Downloads</a>
@@ -48,3 +59,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
