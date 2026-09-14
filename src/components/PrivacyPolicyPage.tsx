@@ -345,10 +345,10 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/30 text-xs font-mono font-semibold mb-4">
           <Shield className="w-4 h-4 text-violet-400" /> Zero-Cloud Guarantee Policy
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight mb-4">
           LifeMirror Desktop Privacy Policy
         </h1>
-        <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+        <p className="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed">
           Detailed technical and legal breakdown of our 100% offline flight model, SQLCipher AES-256 local database encryption, on-device Ollama AI processing, and strict user data ownership.
         </p>
 
@@ -356,14 +356,14 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         <div className="flex items-center justify-center gap-3 mt-6">
           <button
             onClick={handleCopyPolicy}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-xs font-mono text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all"
           >
             {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-violet-400" />}
             <span>{copied ? 'Copied Policy!' : 'Copy Plain Text'}</span>
           </button>
           <button
             onClick={handleDownloadPolicy}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-600/20 border border-violet-500/30 text-xs font-mono text-violet-300 hover:bg-violet-600/30 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-600/20 border border-violet-500/30 text-xs font-mono text-violet-400 dark:text-violet-300 hover:bg-violet-600/30 transition-all"
           >
             <Download className="w-3.5 h-3.5 text-violet-400" />
             <span>Download .txt Copy</span>
@@ -377,19 +377,19 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         <div className="md:col-span-1 space-y-6">
           {/* Search Input */}
           <div className="relative">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+            <Search className="w-4 h-4 text-[var(--text-muted)] absolute left-3.5 top-3.5" />
             <input
               type="text"
               placeholder="Search policy terms..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-black/60 border border-white/10 rounded-xl pl-10 pr-3 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-violet-500 transition-colors"
+              className="w-full bg-[var(--bg-glass)] border border-[var(--border-glass)] rounded-xl pl-10 pr-3 py-2.5 text-xs font-mono text-[var(--text-primary)] focus:outline-none focus:border-violet-500 transition-colors"
             />
           </div>
 
           {/* Table of Contents */}
           <div className="glass-card p-4 space-y-2">
-            <div className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold mb-3 px-2 flex items-center justify-between">
+            <div className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-bold mb-3 px-2 flex items-center justify-between">
               <span>Table of Contents</span>
               <span className="text-[10px] text-violet-400">{filteredSections.length} Sections</span>
             </div>
@@ -406,7 +406,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
                     className={`w-full text-left px-3 py-2.5 rounded-xl font-mono text-xs flex items-center gap-2.5 transition-all ${
                       isActive
                         ? 'bg-violet-600 text-white font-semibold shadow-lg shadow-violet-600/30'
-                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-glass)]'
                     }`}
                   >
                     <Icon className="w-4 h-4 shrink-0" />
@@ -422,7 +422,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
             <div className="flex items-center gap-2 text-emerald-400 font-bold">
               <ShieldCheck className="w-4 h-4" /> Air-Gapped Verified
             </div>
-            <p className="text-gray-400 text-[11px] leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-[11px] leading-relaxed">
               Audit our network behavior anytime using tools like Wireshark, Little Snitch, or Netstat. Zero outgoing connections.
             </p>
           </div>
@@ -431,7 +431,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         {/* Main Policy Document Body */}
         <div className="md:col-span-3 space-y-8">
           {filteredSections.length === 0 ? (
-            <div className="glass-card p-12 text-center text-gray-400 font-mono text-sm space-y-3">
+            <div className="glass-card p-12 text-center text-[var(--text-muted)] font-mono text-sm space-y-3">
               <AlertTriangle className="w-8 h-8 text-amber-400 mx-auto" />
               <p>No privacy policy clauses match your search "{searchQuery}".</p>
               <button
@@ -448,18 +448,18 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
                 <section
                   key={section.id}
                   id={section.id}
-                  className="glass-card p-6 sm:p-8 border border-white/10 relative overflow-hidden scroll-mt-24 transition-all hover:border-white/20"
+                  className="glass-card p-6 sm:p-8 border border-[var(--border-glass)] relative overflow-hidden scroll-mt-24 transition-all hover:border-violet-500/30"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-white/5">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[var(--border-glass)]">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="text-[11px] font-mono text-gray-400 uppercase tracking-widest">
+                        <span className="text-[11px] font-mono text-[var(--text-muted)] uppercase tracking-widest">
                           {section.category}
                         </span>
-                        <h2 className="text-lg sm:text-xl font-bold text-white">
+                        <h2 className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
                           {section.title}
                         </h2>
                       </div>
@@ -470,7 +470,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
                     </span>
                   </div>
 
-                  <div className="text-gray-300">{section.content}</div>
+                  <div className="text-[var(--text-secondary)]">{section.content}</div>
                 </section>
               );
             })

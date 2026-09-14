@@ -17,13 +17,19 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const saved = localStorage.getItem('lifemirror-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
   const [currentView, setCurrentView] = useState<'showcase' | 'privacy-policy'>(() => {
     return window.location.hash.startsWith('#privacy-policy') ? 'privacy-policy' : 'showcase';
   });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('lifemirror-theme', theme);
   }, [theme]);
 
   useEffect(() => {
@@ -54,7 +60,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0d11] text-gray-100 selection:bg-violet-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] selection:bg-violet-500 selection:text-white transition-colors duration-300">
       <Navbar theme={theme} onToggleTheme={toggleTheme} onNavigateToPrivacy={() => setCurrentView('privacy-policy')} />
       <main className="pt-16">
         {currentView === 'privacy-policy' ? (

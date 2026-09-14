@@ -38,20 +38,20 @@ export const LocalAiSimulator: React.FC = () => {
   }, []);
 
   return (
-    <section id="ai-experience" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 text-center">
+    <section id="ai-experience" className="py-24 px-6 max-w-7xl mx-auto border-t border-[var(--border-glass)] text-center">
       <div className="mb-12">
         <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">
           Offline Intelligence
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           Local AI Reflection Experience
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base mb-6">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base mb-6">
           LifeMirror interfaces natively with Ollama running locally on your hardware (<code className="text-violet-400">http://localhost:11434</code>). Watch reflections stream live offline!
         </p>
 
         {/* Optional Callout Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono max-w-xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-500 dark:text-cyan-300 text-xs font-mono max-w-xl mx-auto">
           <Sparkles className="w-4 h-4 text-cyan-400 flex-shrink-0" />
           <span><strong>Completely Optional:</strong> LifeMirror works 100% standalone out of the box. Ollama is only required if you choose to enable automated AI reflections and local chat.</span>
         </div>
@@ -75,7 +75,7 @@ export const LocalAiSimulator: React.FC = () => {
               <span>Compile Reflection Card</span>
             </button>
 
-            <div className="text-xs font-mono text-gray-400 mb-3">Interactive Q&A Prompts:</div>
+            <div className="text-xs font-mono text-[var(--text-muted)] mb-3">Interactive Q&A Prompts:</div>
             <div className="space-y-2">
               {MOCK_AI_REFLECTIONS.chatResponses.map((item, idx) => (
                 <button
@@ -84,8 +84,8 @@ export const LocalAiSimulator: React.FC = () => {
                   disabled={isGenerating}
                   className={`w-full text-left p-3 rounded-xl text-xs font-mono transition-all border ${
                     selectedPromptIndex === idx
-                      ? 'bg-violet-500/20 text-violet-300 border-violet-500/40'
-                      : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10 hover:text-white'
+                      ? 'bg-violet-500/20 text-violet-600 dark:text-violet-300 border-violet-500/40'
+                      : 'bg-[var(--bg-glass)] text-[var(--text-secondary)] border-[var(--border-glass)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-primary)]'
                   }`}
                 >
                   {item.query}
@@ -96,7 +96,7 @@ export const LocalAiSimulator: React.FC = () => {
 
           <button
             onClick={() => setShowPayloadInspector(!showPayloadInspector)}
-            className="mt-6 flex items-center justify-between text-[11px] font-mono text-cyan-400 hover:text-cyan-300 transition-colors pt-4 border-t border-white/10"
+            className="mt-6 flex items-center justify-between text-[11px] font-mono text-cyan-400 hover:text-cyan-300 transition-colors pt-4 border-t border-[var(--border-glass)]"
           >
             <span className="flex items-center gap-1.5">
               <Code className="w-3.5 h-3.5" />
@@ -108,8 +108,8 @@ export const LocalAiSimulator: React.FC = () => {
 
         {/* Live Terminal Streaming View */}
         <div className="md:col-span-2 glass-card p-6 border border-violet-500/30 flex flex-col justify-between relative overflow-hidden">
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-            <div className="flex items-center gap-2 font-mono text-xs text-gray-400">
+          <div className="flex items-center justify-between pb-4 mb-4 border-b border-[var(--border-glass)]">
+            <div className="flex items-center gap-2 font-mono text-xs text-[var(--text-muted)]">
               <Terminal className="w-4 h-4 text-violet-400" />
               <span>Ollama Local Stream (localhost:11434)</span>
             </div>

@@ -29,10 +29,10 @@ export const SCurveDemo: React.FC = () => {
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
           Interactive Product Simulation
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           The Serpentine S-Curve Timeline
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
           Experience how LifeMirror maps computer focus sessions along a smooth winding cubic Bézier curve. Click any node to inspect details or expand grouped tab accordions!
         </p>
       </div>
@@ -41,7 +41,7 @@ export const SCurveDemo: React.FC = () => {
       <div className="max-w-4xl mx-auto glass-card p-4 mb-10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
         <div className="flex items-center gap-3">
           <Sliders className="w-4 h-4 text-violet-400" />
-          <span className="text-gray-300">Min Duration Filter:</span>
+          <span className="text-[var(--text-secondary)]">Min Duration Filter:</span>
           <input
             type="range"
             min="60"
@@ -54,7 +54,7 @@ export const SCurveDemo: React.FC = () => {
           <span className="text-violet-400 font-bold">{minLogThreshold}s</span>
         </div>
 
-        <div className="flex items-center gap-4 text-gray-400">
+        <div className="flex items-center gap-4 text-[var(--text-muted)]">
           <span className="flex items-center gap-1.5 text-emerald-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             Live Active Focus Ticking
@@ -139,24 +139,24 @@ export const SCurveDemo: React.FC = () => {
                     style={{ left: `${cardX}px`, top: `${nodeY}px` }}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                      <span className="text-xs font-bold text-[var(--text-primary)] flex items-center gap-1.5">
                         {log.appName}
                         {log.source === 'Browser' && (
-                          <span className="text-[10px] bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded font-mono">
+                          <span className="text-[10px] bg-cyan-500/20 text-cyan-400 px-1.5 py-0.5 rounded font-mono">
                             Native Bridge
                           </span>
                         )}
                       </span>
-                      <span className="text-[11px] font-mono text-gray-400">{log.startTime}</span>
+                      <span className="text-[11px] font-mono text-[var(--text-muted)]">{log.startTime}</span>
                     </div>
 
-                    <div className="text-xs text-gray-300 font-mono line-clamp-1 mb-2">
+                    <div className="text-xs text-[var(--text-secondary)] font-mono line-clamp-1 mb-2">
                       {log.windowTitle}
                     </div>
 
                     {/* Accordion Sub-Sessions */}
                     {log.subSessions && (
-                      <div className="mt-2 pt-2 border-t border-white/10">
+                      <div className="mt-2 pt-2 border-t border-[var(--border-glass)]">
                         <button
                           onClick={() => setExpandedAccordionId(expandedAccordionId === log.id ? null : log.id)}
                           className="flex items-center justify-between w-full text-xs text-cyan-400 hover:text-cyan-300 font-mono"
@@ -168,9 +168,9 @@ export const SCurveDemo: React.FC = () => {
                         {expandedAccordionId === log.id && (
                           <div className="mt-2 space-y-1.5">
                             {log.subSessions.map((sub) => (
-                              <div key={sub.id} className="p-2 rounded bg-black/40 border border-white/5 text-[11px] font-mono flex items-center justify-between">
-                                <span className="text-gray-300 truncate max-w-[180px]">{sub.title}</span>
-                                <span className="text-gray-500">{Math.floor(sub.duration / 60)}m</span>
+                              <div key={sub.id} className="p-2 rounded bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[11px] font-mono flex items-center justify-between">
+                                <span className="text-[var(--text-secondary)] truncate max-w-[180px]">{sub.title}</span>
+                                <span className="text-[var(--text-muted)]">{Math.floor(sub.duration / 60)}m</span>
                               </div>
                             ))}
                           </div>
@@ -180,7 +180,7 @@ export const SCurveDemo: React.FC = () => {
 
                     {/* Notes Section */}
                     {log.notes && (
-                      <div className="mt-2 pt-2 border-t border-white/5 text-[11px] text-gray-400 font-mono italic">
+                      <div className="mt-2 pt-2 border-t border-[var(--border-glass)] text-[11px] text-[var(--text-muted)] font-mono italic">
                         "{log.notes}"
                       </div>
                     )}

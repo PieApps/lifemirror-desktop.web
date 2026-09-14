@@ -48,15 +48,15 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 text-center">
+    <section id="faq" className="py-24 px-6 max-w-7xl mx-auto border-t border-[var(--border-glass)] text-center">
       <div className="mb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
           Frequently Asked Questions
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           Everything You Need to Know
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
           Clear answers about local encryption, optional Ollama setup, native stdio bridges, and perpetual licensing.
         </p>
       </div>
@@ -69,7 +69,7 @@ export const FaqSection: React.FC = () => {
             <div
               key={idx}
               className={`glass-card p-6 border transition-all duration-300 ${
-                isOpen ? 'border-violet-500/40 bg-violet-950/20' : 'border-white/10'
+                isOpen ? 'border-violet-500/40 bg-violet-500/10' : 'border-[var(--border-glass)]'
               }`}
             >
               <button
@@ -77,22 +77,22 @@ export const FaqSection: React.FC = () => {
                 className="w-full flex items-center justify-between gap-4 text-left focus:outline-none"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 uppercase border border-violet-500/30">
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-violet-500/20 text-violet-600 dark:text-violet-300 uppercase border border-violet-500/30">
                     {faq.category}
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)] leading-snug">
                     {faq.question}
                   </h3>
                 </div>
                 {isOpen ? (
                   <ChevronUp className="w-5 h-5 text-violet-400 flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-[var(--text-muted)] flex-shrink-0" />
                 )}
               </button>
 
               {isOpen && (
-                <div className="mt-4 pt-4 border-t border-white/10 text-xs sm:text-sm text-gray-300 font-mono leading-relaxed animate-fadeIn">
+                <div className="mt-4 pt-4 border-t border-[var(--border-glass)] text-xs sm:text-sm text-[var(--text-secondary)] font-mono leading-relaxed animate-fadeIn">
                   {faq.answer}
                 </div>
               )}

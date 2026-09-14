@@ -154,10 +154,10 @@ export const ScreenshotGallery: React.FC = () => {
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] mb-4">
           Experience Native Desktop Craftsmanship
         </h2>
-        <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-xl mx-auto text-sm sm:text-base">
           Explore the exact visual interface of LifeMirror Desktop. Built with React + Vite + Tauri 2.0.
         </p>
       </div>
@@ -171,10 +171,10 @@ export const ScreenshotGallery: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-xs transition-all ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-xs transition-all border ${
                 isActive
-                  ? 'bg-violet-600 text-white shadow-lg shadow-violet-600/30 scale-105'
-                  : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10'
+                  ? 'bg-violet-600 text-white border-violet-500 shadow-lg shadow-violet-600/30 scale-105'
+                  : 'bg-[var(--bg-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] border-[var(--border-glass)]'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -185,7 +185,7 @@ export const ScreenshotGallery: React.FC = () => {
       </div>
 
       {/* Description */}
-      <p className="text-xs sm:text-sm text-gray-400 text-center max-w-lg mx-auto mb-8 font-mono">
+      <p className="text-xs sm:text-sm text-[var(--text-muted)] text-center max-w-lg mx-auto mb-8 font-mono">
         {currentTab.description}
       </p>
 

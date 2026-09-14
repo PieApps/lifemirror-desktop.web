@@ -86,15 +86,15 @@ export const FeatureGrid: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 text-center">
+    <section id="features" className="py-24 px-6 max-w-7xl mx-auto border-t border-[var(--border-glass)] text-center">
       <div className="mb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
           Categorized Capability Directory
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           Everything You Need. 100% Local.
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
           Explore the 6 core pillars of LifeMirror Desktop. Built with Tauri 2.0, Rust, and SQLCipher.
         </p>
       </div>
@@ -103,7 +103,7 @@ export const FeatureGrid: React.FC = () => {
         {categories.map((cat, idx) => {
           const Icon = cat.icon;
           return (
-            <div key={idx} className="glass-card p-6 border border-white/10 hover:border-violet-500/40 relative group">
+            <div key={idx} className="glass-card p-6 border border-[var(--border-glass)] hover:border-violet-500/40 relative group">
               <div className="flex items-center justify-between mb-6">
                 <div className={`w-10 h-10 rounded-xl border flex items-center justify-center ${cat.color}`}>
                   <Icon className="w-5 h-5" />
@@ -113,9 +113,9 @@ export const FeatureGrid: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4">{cat.title}</h3>
+              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">{cat.title}</h3>
 
-              <ul className="space-y-2.5 text-xs text-gray-300 font-mono">
+              <ul className="space-y-2.5 text-xs text-[var(--text-secondary)] font-mono">
                 {cat.items.map((item, itemIdx) => (
                   <li key={itemIdx} className="flex items-start gap-2">
                     <span className="text-violet-400 font-bold">•</span>

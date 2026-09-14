@@ -33,13 +33,13 @@ export const HeroSection: React.FC = () => {
       <div className="absolute top-1/3 left-1/3 w-[350px] h-[250px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       {/* Pill Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium mb-8 backdrop-blur-md">
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-xs font-medium mb-8 backdrop-blur-md">
         <Shield className="w-3.5 h-3.5 text-violet-400 animate-pulse" />
         <span>100% Offline • Zero Telemetry • Works Standalone (Optional Local AI)</span>
       </div>
 
       {/* Main Title */}
-      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mb-6">
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.15] max-w-4xl mb-6">
         Mirror Your Mind. <br />
         <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
           Master Your Time.
@@ -47,7 +47,7 @@ export const HeroSection: React.FC = () => {
       </h1>
 
       {/* Subtitle */}
-      <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed font-normal">
+      <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mb-10 leading-relaxed font-normal">
         The privacy-first desktop utility that turns your continuous computer focus logs into a winding serpentine timeline with offline AI reflections and active distraction defense.
       </p>
 
@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
 
         <a
           href="#timeline-demo"
-          className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/5 border border-white/10 text-white font-medium text-base hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2"
+          className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-primary)] font-medium text-base hover:bg-[var(--bg-card-hover)] hover:border-violet-500/30 transition-all flex items-center justify-center gap-2"
         >
           <Sparkles className="w-5 h-5 text-cyan-400" />
           <span>Explore Live Demo</span>
@@ -82,25 +82,25 @@ export const HeroSection: React.FC = () => {
             </span>
             <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Active Session Monitored Natively</span>
           </div>
-          <span className="text-xs font-mono text-gray-400 bg-white/5 px-2.5 py-1 rounded-lg border border-white/5">
+          <span className="text-xs font-mono text-[var(--text-muted)] bg-[var(--bg-glass)] px-2.5 py-1 rounded-lg border border-[var(--border-glass)]">
             SQLCipher Encrypted
           </span>
         </div>
 
-        <div className="flex items-center justify-between bg-black/40 p-4 rounded-xl border border-white/5">
+        <div className="flex items-center justify-between bg-[var(--bg-glass)] p-4 rounded-xl border border-[var(--border-glass)]">
           <div className="flex items-center gap-4 text-left">
             <div className="w-12 h-12 rounded-xl bg-violet-950/80 border border-violet-500/30 flex items-center justify-center text-xl font-bold text-violet-300">
               💻
             </div>
             <div>
-              <div className="text-white font-semibold text-sm">Visual Studio Code</div>
-              <div className="text-xs text-gray-400 font-mono">SCurveTimeline.tsx — lifemirror-desktop</div>
+              <div className="text-[var(--text-primary)] font-semibold text-sm">Visual Studio Code</div>
+              <div className="text-xs text-[var(--text-muted)] font-mono">SCurveTimeline.tsx — lifemirror-desktop</div>
             </div>
           </div>
 
           <div className="text-right">
             <div className="text-sm font-mono font-bold text-violet-400">{formatTime(activeSeconds)}</div>
-            <div className="text-[11px] text-gray-500">Continuous OS Focus</div>
+            <div className="text-[11px] text-[var(--text-muted)]">Continuous OS Focus</div>
           </div>
         </div>
       </div>

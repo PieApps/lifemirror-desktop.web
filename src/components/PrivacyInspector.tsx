@@ -5,33 +5,33 @@ export const PrivacyInspector: React.FC = () => {
   const [isIncognito, setIsIncognito] = useState(false);
 
   return (
-    <section id="privacy" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5 text-center">
+    <section id="privacy" className="py-24 px-6 max-w-7xl mx-auto border-t border-[var(--border-glass)] text-center">
       <div className="mb-12">
         <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">
           Zero-Cloud Architecture
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           SQLCipher Encryption & Incognito Mode
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
           Every database write transaction is encrypted locally at the page level using SQLCipher. Toggle Incognito Mode to test instant in-memory session wipes!
         </p>
       </div>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
         {/* Card 1: SQLCipher Page Encryption */}
-        <div className="glass-card p-8 border border-white/10 relative overflow-hidden">
+        <div className="glass-card p-8 border border-[var(--border-glass)] relative overflow-hidden">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <Database className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">SQLCipher AES-256</h3>
-              <p className="text-xs text-gray-400 font-mono">Page-Level SQLite Encryption</p>
+              <h3 className="text-lg font-bold text-[var(--text-primary)]">SQLCipher AES-256</h3>
+              <p className="text-xs text-[var(--text-muted)] font-mono">Page-Level SQLite Encryption</p>
             </div>
           </div>
 
-          <div className="bg-black/60 p-4 rounded-xl border border-white/5 font-mono text-xs text-gray-300 space-y-2 mb-6">
+          <div className="bg-slate-950/80 p-4 rounded-xl border border-[var(--border-glass)] font-mono text-xs text-gray-300 space-y-2 mb-6">
             <div className="flex items-center justify-between text-emerald-400">
               <span>PRAGMA key = "spk_99..."</span>
               <Key className="w-3.5 h-3.5" />
@@ -45,18 +45,18 @@ export const PrivacyInspector: React.FC = () => {
 
         {/* Card 2: Incognito Mode Simulator */}
         <div className={`glass-card p-8 border transition-all duration-500 relative overflow-hidden ${
-          isIncognito ? 'border-amber-500/50 bg-amber-950/20' : 'border-white/10'
+          isIncognito ? 'border-amber-500/50 bg-amber-500/10' : 'border-[var(--border-glass)]'
         }`}>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                isIncognito ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40' : 'bg-white/5 text-gray-400'
+                isIncognito ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40' : 'bg-[var(--bg-glass)] text-[var(--text-muted)]'
               }`}>
                 <EyeOff className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Incognito Protocol</h3>
-                <p className="text-xs text-gray-400 font-mono">
+                <h3 className="text-lg font-bold text-[var(--text-primary)]">Incognito Protocol</h3>
+                <p className="text-xs text-[var(--text-muted)] font-mono">
                   {isIncognito ? 'Logging Paused (Volatile Memory)' : 'Logging Active'}
                 </p>
               </div>

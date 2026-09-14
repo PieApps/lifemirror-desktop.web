@@ -18,17 +18,17 @@ const DEMO_STATS = [
 
 export const PricingSection: React.FC = () => {
   return (
-    <section id="pricing" className="py-24 px-6 max-w-7xl mx-auto text-center border-t border-white/5">
+    <section id="pricing" className="py-24 px-6 max-w-7xl mx-auto text-center border-t border-[var(--border-glass)]">
 
       {/* Section Header */}
       <div className="mb-12">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
           Transparent Licensing
         </span>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-4">
           Pay Once. Own Forever.
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
           No subscriptions. No cloud lock-in. No hidden monthly fees. Buy a perpetual license
           once and run LifeMirror Desktop completely offline on all your machines.
         </p>
@@ -38,8 +38,8 @@ export const PricingSection: React.FC = () => {
       <div className="flex justify-center gap-12 mb-12">
         {DEMO_STATS.map(({ label, value }) => (
           <div key={label} className="text-center">
-            <div className="text-2xl font-extrabold text-white">{value}</div>
-            <div className="text-xs font-mono text-gray-500 mt-0.5">{label}</div>
+            <div className="text-2xl font-extrabold text-[var(--text-primary)]">{value}</div>
+            <div className="text-xs font-mono text-[var(--text-muted)] mt-0.5">{label}</div>
           </div>
         ))}
       </div>
@@ -58,14 +58,14 @@ export const PricingSection: React.FC = () => {
             One-Time Purchase
           </div>
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-5xl font-extrabold text-white">$29</span>
-            <span className="text-sm font-mono text-gray-400">/ lifetime</span>
+            <span className="text-5xl font-extrabold text-[var(--text-primary)]">$29</span>
+            <span className="text-sm font-mono text-[var(--text-muted)]">/ lifetime</span>
           </div>
-          <p className="text-xs text-gray-400">Install on all your personal computers. Free updates forever.</p>
+          <p className="text-xs text-[var(--text-secondary)]">Install on all your personal computers. Free updates forever.</p>
         </div>
 
         {/* Included Feature List */}
-        <div className="space-y-3.5 mb-6 border-t border-b border-white/10 py-6 text-sm text-gray-200">
+        <div className="space-y-3.5 mb-6 border-t border-b border-[var(--border-glass)] py-6 text-sm text-[var(--text-secondary)]">
           {[
             'Lifetime desktop app access (Windows, macOS, Linux)',
             '100% Offline SQLCipher encrypted local database',
@@ -83,17 +83,17 @@ export const PricingSection: React.FC = () => {
         </div>
 
         {/* PPP Note */}
-        <div className="flex items-start gap-2.5 mb-6 bg-violet-500/8 border border-violet-500/20 rounded-xl px-4 py-3">
+        <div className="flex items-start gap-2.5 mb-6 bg-violet-500/10 border border-violet-500/20 rounded-xl px-4 py-3">
           <Globe className="w-4 h-4 text-violet-400 flex-shrink-0 mt-0.5" />
-          <p className="text-xs text-gray-400 leading-relaxed">
-            <span className="text-violet-300 font-semibold">Purchasing Power Parity available.</span>{' '}
+          <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+            <span className="text-violet-600 dark:text-violet-300 font-semibold">Purchasing Power Parity available.</span>{' '}
             If $29 is steep in your country, Gumroad automatically offers a local discount at
             checkout — no coupon code needed.{' '}
             <a
               href={GUMROAD_PRODUCT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-violet-400 underline hover:text-violet-300 transition-colors"
+              className="text-violet-500 underline hover:text-violet-400 transition-colors"
             >
               Check your price →
             </a>
@@ -102,7 +102,7 @@ export const PricingSection: React.FC = () => {
 
         {/* Post-purchase info grid */}
         {/* TODO: Update these details to match your Gumroad product configuration. */}
-        <div className="grid grid-cols-2 gap-3 mb-8 text-xs text-gray-400">
+        <div className="grid grid-cols-2 gap-3 mb-8 text-xs text-[var(--text-secondary)]">
           <div className="flex items-center gap-2">
             <Mail className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
             {/* TODO: Confirm Gumroad delivers a receipt/key automatically */}
