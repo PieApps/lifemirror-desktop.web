@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Github, Lock, Heart } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 interface FooterProps {
   onNavigateToPrivacy?: () => void;
@@ -12,8 +13,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy }) => {
         {/* Brand */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-violet-600 flex items-center justify-center text-white">
-              <Shield className="w-4 h-4" />
+            <div className="w-7 h-7 rounded-lg overflow-hidden flex items-center justify-center p-0.5 bg-gradient-to-br from-violet-500 to-indigo-600 shadow-md">
+              <img
+                src={logoImg}
+                alt="LifeMirror Logo"
+                className="w-full h-full rounded-md object-cover"
+                onError={(e) => { e.currentTarget.src = '/logo.png'; }}
+              />
             </div>
             <span className="font-display font-bold text-base text-white">LifeMirror Desktop</span>
           </div>

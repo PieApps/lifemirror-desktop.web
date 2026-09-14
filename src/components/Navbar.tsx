@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Github, Sun, Moon, Download, Sparkles } from 'lucide-react';
-import logoImg from '../assets/logo.svg';
+import logoImg from '../assets/logo.png';
 
 interface NavbarProps {
   theme: 'dark' | 'light';
@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
               src={logoImg}
               alt="LifeMirror Logo"
               className="w-full h-full rounded-full object-cover"
-              onError={(e) => { e.currentTarget.src = '/logo.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/logo.png'; }}
             />
           </div>
           <div className="flex flex-col">
@@ -61,7 +61,6 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
           <a href="#pricing" className="hover:text-violet-400 transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-violet-400 transition-colors">FAQ</a>
           <a href="#downloads" className="hover:text-violet-400 transition-colors">Downloads</a>
-          <a href="#docs" className="hover:text-violet-400 transition-colors">Docs</a>
         </div>
 
         {/* Actions */}
@@ -73,16 +72,6 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
           >
             {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
           </button>
-
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all"
-          >
-            <Github className="w-4 h-4" />
-            <span>GitHub</span>
-          </a>
 
           <a
             href="#downloads"
