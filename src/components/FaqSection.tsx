@@ -38,8 +38,8 @@ export const FaqSection: React.FC = () => {
     },
     {
       category: 'Licensing',
-      question: 'Is LifeMirror Desktop a monthly subscription or a one-time purchase?',
-      answer: 'LifeMirror Desktop is a perpetual one-time purchase ($29 lifetime access). Pay once and use it on all your personal computers (Windows, macOS, Linux) with lifetime updates included. No recurring monthly fees or cloud paywalls.',
+      question: 'Is LifeMirror Desktop completely free to use?',
+      answer: 'LifeMirror Desktop is 100% free and open-source under the MIT license. There are no subscriptions, ads, or paywalls. If you find the utility valuable and want to support our independent development, you can voluntarily buy us a coffee or sponsor us on GitHub.',
     },
     {
       category: 'Features',
@@ -67,7 +67,7 @@ export const FaqSection: React.FC = () => {
           Everything You Need to Know
         </h2>
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
-          Clear answers about local encryption, optional Ollama setup, native stdio bridges, and perpetual licensing.
+          Clear answers about local encryption, optional Ollama setup, native stdio bridges, and open-source licensing.
         </p>
       </div>
 

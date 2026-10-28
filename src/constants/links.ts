@@ -15,4 +15,8 @@ export const APP_LINKS = {
   support: {
     email: 'vrpieapps@gmail.com',
   },
+  donations: {
+    buyMeACoffee: 'https://buymeacoffee.com/vrpieapps',
+    githubSponsors: 'https://github.com/sponsors/vrpieapps',
+  },
 } as const;
