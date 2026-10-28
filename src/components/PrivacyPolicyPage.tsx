@@ -98,31 +98,31 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'Core Architecture',
       icon: ShieldCheck,
       badge: '100% Offline',
-      badgeColor: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+      badgeColor: 'text-emerald-600 dark:text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            LifeMirror Desktop was designed from the ground up on a strict <strong className="text-white">Zero-Cloud Guarantee</strong>. Unlike cloud-reliant productivity tools, LifeMirror operates entirely within your local computing environment.
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+            LifeMirror Desktop was designed from the ground up on a strict <strong className="text-[var(--text-primary)]">Zero-Cloud Guarantee</strong>. Unlike cloud-reliant productivity tools, LifeMirror operates entirely within your local computing environment.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
-            <div className="bg-black/50 p-4 rounded-xl border border-emerald-500/20">
-              <div className="flex items-center gap-2 text-emerald-400 font-semibold mb-2 text-xs font-mono">
+            <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-emerald-500/25">
+              <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold mb-2 text-xs font-mono">
                 <CheckCircle2 className="w-4 h-4" /> Zero Telemetry SDKs
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                 No Google Analytics, PostHog, Mixpanel, Sentry, or pingbacks are embedded in the application.
               </p>
             </div>
-            <div className="bg-black/50 p-4 rounded-xl border border-emerald-500/20">
-              <div className="flex items-center gap-2 text-emerald-400 font-semibold mb-2 text-xs font-mono">
+            <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-emerald-500/25">
+              <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold mb-2 text-xs font-mono">
                 <CheckCircle2 className="w-4 h-4" /> Air-Gapped Flight Isolation
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                 The desktop app executes with full functionality even when your device is completely disconnected from the internet.
               </p>
             </div>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
             Every session log, productivity breakdown, reflection note, and focus score is calculated locally on your CPU/GPU and stored on your local disk.
           </p>
         </div>
@@ -134,25 +134,25 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'Encryption',
       icon: Lock,
       badge: 'AES-256-CBC',
-      badgeColor: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
+      badgeColor: 'text-cyan-600 dark:text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            Your personal data is encrypted before it ever touches your physical hard drive using <strong className="text-white">SQLCipher AES-256 page-level encryption</strong>.
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+            Your personal data is encrypted before it ever touches your physical hard drive using <strong className="text-[var(--text-primary)]">SQLCipher AES-256 page-level encryption</strong>.
           </p>
-          <div className="bg-black/70 p-4 rounded-xl border border-white/10 font-mono text-xs text-gray-300 space-y-2">
-            <div className="text-cyan-400 font-bold flex items-center justify-between">
+          <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-[var(--border-glass)] font-mono text-xs text-[var(--text-secondary)] space-y-2">
+            <div className="text-cyan-600 dark:text-cyan-400 font-bold flex items-center justify-between">
               <span>SQLCipher Security Assertion</span>
-              <span className="text-[10px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">PRAGMA cipher_page_size = 4096</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 border border-cyan-500/20">PRAGMA cipher_page_size = 4096</span>
             </div>
-            <p className="text-gray-400 text-[11px] leading-relaxed">
-              Target Tables: <code className="text-amber-300">activity_logs</code>, <code className="text-amber-300">journal_entries</code>, <code className="text-amber-300">focus_sessions</code>, <code className="text-amber-300">interdiction_events</code>.
+            <p className="text-[var(--text-muted)] text-[11px] leading-relaxed">
+              Target Tables: <code className="text-amber-600 dark:text-amber-300 font-semibold">activity_logs</code>, <code className="text-amber-600 dark:text-amber-300 font-semibold">journal_entries</code>, <code className="text-amber-600 dark:text-amber-300 font-semibold">focus_sessions</code>, <code className="text-amber-600 dark:text-amber-300 font-semibold">interdiction_events</code>.
             </p>
-            <div className="p-3 rounded bg-cyan-950/40 border border-cyan-500/20 text-cyan-200 text-[11px]">
+            <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/25 text-cyan-700 dark:text-cyan-200 text-[11px]">
               🔒 Data files on disk are cryptographically unreadable without the local master passphrase derived on device startup.
             </div>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
             Encryption keys are stored securely using system keychains (Keychain Access on macOS, Secret Service API on Linux, Credential Manager on Windows) and never transmitted over network sockets.
           </p>
         </div>
@@ -164,21 +164,21 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'AI Infrastructure',
       icon: Cpu,
       badge: 'On-Device Inference',
-      badgeColor: 'text-violet-400 border-violet-500/30 bg-violet-500/10',
+      badgeColor: 'text-violet-600 dark:text-violet-400 border-violet-500/30 bg-violet-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            LifeMirror Desktop leverages locally deployed large language models (such as <strong className="text-white">Ollama with Llama 3 or Mistral</strong>) running on your hardware (CPU or GPU).
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+            LifeMirror Desktop leverages locally deployed large language models (such as <strong className="text-[var(--text-primary)]">Ollama with Llama 3 or Mistral</strong>) running on your hardware (CPU or GPU).
           </p>
-          <div className="p-4 rounded-xl bg-violet-950/20 border border-violet-500/30 space-y-2">
-            <div className="flex items-center gap-2 text-violet-300 font-semibold text-xs font-mono">
+          <div className="p-4 rounded-xl bg-violet-500/10 border border-violet-500/25 space-y-2">
+            <div className="flex items-center gap-2 text-violet-600 dark:text-violet-300 font-semibold text-xs font-mono">
               <Cpu className="w-4 h-4" /> Localhost Endpoint Binding
             </div>
-            <p className="text-xs text-gray-300 leading-relaxed">
-              Requests are dispatched exclusively to <code className="text-violet-300 font-mono">http://127.0.0.1:11434</code>. Prompts contain zero personally identifiable information (PII) and never pass through OpenAI, Anthropic, or external API proxies.
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+              Requests are dispatched exclusively to <code className="text-violet-600 dark:text-violet-300 font-mono font-semibold">http://127.0.0.1:11434</code>. Prompts contain zero personally identifiable information (PII) and never pass through OpenAI, Anthropic, or external API proxies.
             </p>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
             Reflection summaries generated by the local AI are written directly to your SQLCipher database. You maintain complete control over model selection, temperature settings, and prompt context windows.
           </p>
         </div>
@@ -190,29 +190,29 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'OS Integration',
       icon: Terminal,
       badge: 'Local Event Loop',
-      badgeColor: 'text-indigo-400 border-indigo-500/30 bg-indigo-500/10',
+      badgeColor: 'text-indigo-600 dark:text-indigo-400 border-indigo-500/30 bg-indigo-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
             To provide continuous focus analytics and S-Curve timeline visualizer metrics, LifeMirror runs a low-resource background loop via its Rust/Tauri 2.0 core.
           </p>
-          <ul className="space-y-2 font-mono text-xs text-gray-300">
-            <li className="flex items-start gap-2 bg-black/40 p-3 rounded-lg border border-white/5">
-              <span className="text-indigo-400 font-bold">•</span>
+          <ul className="space-y-2 font-mono text-xs text-[var(--text-secondary)]">
+            <li className="flex items-start gap-2 bg-[var(--bg-glass)] p-3 rounded-lg border border-[var(--border-glass)]">
+              <span className="text-indigo-500 font-bold">•</span>
               <div>
-                <strong className="text-white">Active Window Titles:</strong> Logged locally to categorize productive vs. distracting sessions.
+                <strong className="text-[var(--text-primary)]">Active Window Titles:</strong> Logged locally to categorize productive vs. distracting sessions.
               </div>
             </li>
-            <li className="flex items-start gap-2 bg-black/40 p-3 rounded-lg border border-white/5">
-              <span className="text-indigo-400 font-bold">•</span>
+            <li className="flex items-start gap-2 bg-[var(--bg-glass)] p-3 rounded-lg border border-[var(--border-glass)]">
+              <span className="text-indigo-500 font-bold">•</span>
               <div>
-                <strong className="text-white">Process Names:</strong> Extracted directly from OS window focus events.
+                <strong className="text-[var(--text-primary)]">Process Names:</strong> Extracted directly from OS window focus events.
               </div>
             </li>
-            <li className="flex items-start gap-2 bg-black/40 p-3 rounded-lg border border-white/5">
-              <span className="text-indigo-400 font-bold">•</span>
+            <li className="flex items-start gap-2 bg-[var(--bg-glass)] p-3 rounded-lg border border-[var(--border-glass)]">
+              <span className="text-indigo-500 font-bold">•</span>
               <div>
-                <strong className="text-white">Custom App Blocklists:</strong> You can exclude sensitive applications (e.g. password managers, banking apps, health portals) from ever being logged.
+                <strong className="text-[var(--text-primary)]">Custom App Blocklists:</strong> You can exclude sensitive applications (e.g. password managers, banking apps, health portals) from ever being logged.
               </div>
             </li>
           </ul>
@@ -225,27 +225,27 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'Browser Integration',
       icon: EyeOff,
       badge: 'Native Messaging',
-      badgeColor: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
+      badgeColor: 'text-amber-600 dark:text-amber-400 border-amber-500/30 bg-amber-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            The optional LifeMirror Companion Web Extension communicates with the desktop app using Chrome/Firefox's standard <strong className="text-white">Native Messaging Protocol</strong> over local stdio streams.
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+            The optional LifeMirror Companion Web Extension communicates with the desktop app using Chrome/Firefox's standard <strong className="text-[var(--text-primary)]">Native Messaging Protocol</strong> over local stdio streams.
           </p>
-          <div className="bg-black/70 p-4 rounded-xl border border-amber-500/20 font-mono text-xs text-amber-300/90 space-y-2">
-            <div className="flex items-center gap-2 font-bold text-amber-400">
+          <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-amber-500/25 font-mono text-xs text-[var(--text-secondary)] space-y-2">
+            <div className="flex items-center gap-2 font-bold text-amber-600 dark:text-amber-400">
               <EyeOff className="w-4 h-4" /> Incognito & Private Window Protection
             </div>
-            <p className="text-gray-300 text-[11px] leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-[11px] leading-relaxed">
               When Incognito Mode is toggled or when browsing in private windows:
             </p>
-            <div className="space-y-1 text-[11px] text-gray-400">
+            <div className="space-y-1 text-[11px] text-[var(--text-muted)]">
               <div>✓ Active database writes are instantly suspended.</div>
               <div>✓ Active session memory is held strictly in volatile RAM.</div>
               <div>✓ All temporary session caches are wiped upon closing or deactivating.</div>
             </div>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-            The companion extension is distributed via the <a href={APP_LINKS.ecosystem.chromeExtension} target="_blank" rel="noopener noreferrer" className="text-amber-400 underline hover:text-white">Chrome Web Store</a> and does not inject remote scripts, read web page DOM contents, or transmit browsing history to external endpoints.
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
+            The companion extension is distributed via the <a href={APP_LINKS.ecosystem.chromeExtension} target="_blank" rel="noopener noreferrer" className="text-amber-600 dark:text-amber-400 underline hover:text-[var(--text-primary)]">Chrome Web Store</a> and does not inject remote scripts, read web page DOM contents, or transmit browsing history to external endpoints.
           </p>
         </div>
       )
@@ -256,26 +256,26 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'Data Rights',
       icon: Trash2,
       badge: 'Full Data Control',
-      badgeColor: 'text-rose-400 border-rose-500/30 bg-rose-500/10',
+      badgeColor: 'text-rose-600 dark:text-rose-400 border-rose-500/30 bg-rose-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            We believe that <strong className="text-white">your data belongs to you alone</strong>. LifeMirror Desktop provides built-in tools to manage, export, or destroy your recorded history at any time.
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
+            We believe that <strong className="text-[var(--text-primary)]">your data belongs to you alone</strong>. LifeMirror Desktop provides built-in tools to manage, export, or destroy your recorded history at any time.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2">
-            <div className="bg-black/50 p-4 rounded-xl border border-white/10">
-              <div className="flex items-center gap-2 text-rose-300 font-semibold mb-2 text-xs font-mono">
+            <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-[var(--border-glass)]">
+              <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold mb-2 text-xs font-mono">
                 <HardDrive className="w-4 h-4" /> 1-Click JSON / SQLite Export
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                 Export your full focus history, timelines, and journal entries in open standard formats.
               </p>
             </div>
-            <div className="bg-black/50 p-4 rounded-xl border border-rose-500/20">
-              <div className="flex items-center gap-2 text-rose-400 font-semibold mb-2 text-xs font-mono">
+            <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-rose-500/25">
+              <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold mb-2 text-xs font-mono">
                 <Trash2 className="w-4 h-4" /> Instant Database Purge
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                 Trigger a complete database wipe to securely overwrite and erase disk files with zero recovery remnants.
               </p>
             </div>
@@ -289,22 +289,22 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       category: 'Compliance',
       icon: Globe,
       badge: 'MIT Open Source',
-      badgeColor: 'text-purple-400 border-purple-500/30 bg-purple-500/10',
+      badgeColor: 'text-purple-600 dark:text-purple-400 border-purple-500/30 bg-purple-500/10',
       content: (
         <div className="space-y-4">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+          <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
             LifeMirror Desktop does not monetize user data, sell analytics, or partner with advertising networks.
           </p>
-          <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/30 font-mono text-xs text-purple-200 space-y-2">
-            <div className="font-bold text-white flex items-center gap-2">
-              <Shield className="w-4 h-4 text-purple-400" /> Transparent & Auditable Codebase
+          <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/25 font-mono text-xs text-[var(--text-secondary)] space-y-2">
+            <div className="font-bold text-[var(--text-primary)] flex items-center gap-2">
+              <Shield className="w-4 h-4 text-purple-600 dark:text-purple-400" /> Transparent & Auditable Codebase
             </div>
-            <p className="text-gray-300 text-[11px] leading-relaxed">
-              Because LifeMirror Desktop is released under the open-source MIT License, developers and cybersecurity auditors can inspect the source code on <a href={APP_LINKS.github.repo} target="_blank" rel="noopener noreferrer" className="text-purple-300 underline hover:text-white">GitHub (PieApps/lifemirror-desktop)</a> to verify our offline claims and zero-telemetry implementation.
+            <p className="text-[var(--text-secondary)] text-[11px] leading-relaxed">
+              Because LifeMirror Desktop is released under the open-source MIT License, developers and cybersecurity auditors can inspect the source code on <a href={APP_LINKS.github.repo} target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-300 underline hover:text-[var(--text-primary)]">GitHub (PieApps/lifemirror-desktop)</a> to verify our offline claims and zero-telemetry implementation.
             </p>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-            If you have security or privacy questions regarding the software architecture, open an issue on our <a href={APP_LINKS.github.issues} target="_blank" rel="noopener noreferrer" className="text-purple-300 underline hover:text-white">GitHub repository</a> or contact our core maintainers directly at <a href={`mailto:${APP_LINKS.support.email}`} className="text-purple-300 underline hover:text-white">{APP_LINKS.support.email}</a>.
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm leading-relaxed">
+            If you have security or privacy questions regarding the software architecture, open an issue on our <a href={APP_LINKS.github.issues} target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-300 underline hover:text-[var(--text-primary)]">GitHub repository</a> or contact our core maintainers directly at <a href={`mailto:${APP_LINKS.support.email}`} className="text-purple-600 dark:text-purple-300 underline hover:text-[var(--text-primary)]">{APP_LINKS.support.email}</a>.
           </p>
         </div>
       )
@@ -319,32 +319,32 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
   );
 
   return (
-    <div className="min-h-screen bg-[#0d0d11] text-gray-100 py-12 px-4 sm:px-6 max-w-7xl mx-auto font-sans">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] py-12 px-4 sm:px-6 max-w-7xl mx-auto font-sans transition-colors duration-300">
       {/* Top Bar Navigation */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-white/10">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-[var(--border-glass)]">
         <button
           onClick={onBackToHome}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all hover:scale-105"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all hover:scale-105"
         >
-          <ArrowLeft className="w-4 h-4 text-violet-400" />
+          <ArrowLeft className="w-4 h-4 text-violet-500" />
           <span>Back to Showcase</span>
         </button>
 
         <div className="flex items-center gap-3">
-          <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span className="text-xs font-mono px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 font-semibold">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             100% Local & Encrypted
           </span>
-          <span className="text-xs font-mono text-gray-400 hidden sm:inline">
-            Last Updated: <strong className="text-white">September 9, 2026</strong>
+          <span className="text-xs font-mono text-[var(--text-muted)] hidden sm:inline">
+            Last Updated: <strong className="text-[var(--text-primary)]">September 9, 2026</strong>
           </span>
         </div>
       </div>
 
       {/* Header Banner */}
       <div className="text-center mb-12 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/30 text-xs font-mono font-semibold mb-4">
-          <Shield className="w-4 h-4 text-violet-400" /> Zero-Cloud Guarantee Policy
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-300 border border-violet-500/30 text-xs font-mono font-semibold mb-4">
+          <Shield className="w-4 h-4 text-violet-500" /> Zero-Cloud Guarantee Policy
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight mb-4">
           LifeMirror Desktop Privacy Policy
@@ -357,16 +357,16 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         <div className="flex items-center justify-center gap-3 mt-6">
           <button
             onClick={handleCopyPolicy}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-xs font-mono text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-xs font-mono text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all hover:scale-105"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-violet-400" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-violet-500" />}
             <span>{copied ? 'Copied Policy!' : 'Copy Plain Text'}</span>
           </button>
           <button
             onClick={handleDownloadPolicy}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-600/20 border border-violet-500/30 text-xs font-mono text-violet-400 dark:text-violet-300 hover:bg-violet-600/30 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 border border-violet-500/30 text-xs font-mono font-semibold text-violet-600 dark:text-violet-300 transition-all hover:scale-105"
           >
-            <Download className="w-3.5 h-3.5 text-violet-400" />
+            <Download className="w-3.5 h-3.5 text-violet-500" />
             <span>Download .txt Copy</span>
           </button>
         </div>
@@ -384,7 +384,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
               placeholder="Search policy terms..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[var(--bg-glass)] border border-[var(--border-glass)] rounded-xl pl-10 pr-3 py-2.5 text-xs font-mono text-[var(--text-primary)] focus:outline-none focus:border-violet-500 transition-colors"
+              className="w-full bg-[var(--bg-glass)] border border-[var(--border-glass)] rounded-xl pl-10 pr-3 py-2.5 text-xs font-mono text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-violet-500 transition-colors"
             />
           </div>
 
@@ -392,7 +392,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
           <div className="glass-card p-4 space-y-2">
             <div className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-bold mb-3 px-2 flex items-center justify-between">
               <span>Table of Contents</span>
-              <span className="text-[10px] text-violet-400">{filteredSections.length} Sections</span>
+              <span className="text-[10px] text-violet-600 dark:text-violet-400 font-semibold">{filteredSections.length} Sections</span>
             </div>
 
             <div className="space-y-1">
@@ -423,8 +423,8 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
           </div>
 
           {/* Security Guarantee Box */}
-          <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/20 space-y-3 font-mono text-xs">
-            <div className="flex items-center gap-2 text-emerald-400 font-bold">
+          <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 space-y-3 font-mono text-xs">
+            <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold">
               <ShieldCheck className="w-4 h-4" /> Air-Gapped Verified
             </div>
             <p className="text-[var(--text-secondary)] text-[11px] leading-relaxed">
@@ -437,11 +437,11 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
         <div className="md:col-span-3 space-y-8">
           {filteredSections.length === 0 ? (
             <div className="glass-card p-12 text-center text-[var(--text-muted)] font-mono text-sm space-y-3">
-              <AlertTriangle className="w-8 h-8 text-amber-400 mx-auto" />
+              <AlertTriangle className="w-8 h-8 text-amber-500 mx-auto" />
               <p>No privacy policy clauses match your search "{searchQuery}".</p>
               <button
                 onClick={() => setSearchQuery('')}
-                className="text-violet-400 underline hover:text-violet-300 text-xs"
+                className="text-violet-600 dark:text-violet-400 underline hover:text-violet-700 dark:hover:text-violet-300 text-xs font-semibold"
               >
                 Clear search query
               </button>
@@ -457,7 +457,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
                 >
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[var(--border-glass)]">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400">
+                      <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/25 flex items-center justify-center text-violet-600 dark:text-violet-400">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
