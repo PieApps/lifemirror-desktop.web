@@ -31,7 +31,7 @@ export const DownloadSection: React.FC = () => {
 
           <div className="space-y-3 mb-8">
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.windowsExe}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs flex items-center justify-between transition-all shadow-md shadow-violet-600/20"
@@ -41,7 +41,7 @@ export const DownloadSection: React.FC = () => {
             </a>
 
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.windowsMsi}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-[var(--bg-glass)] hover:bg-[var(--bg-card-hover)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium text-xs flex items-center justify-between transition-all"
@@ -66,7 +66,7 @@ export const DownloadSection: React.FC = () => {
 
           <div className="space-y-3 mb-8">
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.macDmg}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs flex items-center justify-between transition-all shadow-md shadow-violet-600/20"
@@ -76,12 +76,12 @@ export const DownloadSection: React.FC = () => {
             </a>
 
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.macAppTarGz}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-[var(--bg-glass)] hover:bg-[var(--bg-card-hover)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium text-xs flex items-center justify-between transition-all"
             >
-              <span>Standalone App (.app)</span>
+              <span>Standalone App (.app.tar.gz)</span>
               <Download className="w-4 h-4 text-[var(--text-muted)]" />
             </a>
           </div>
@@ -101,7 +101,7 @@ export const DownloadSection: React.FC = () => {
 
           <div className="space-y-3 mb-8">
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.linuxDeb}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs flex items-center justify-between transition-all shadow-md shadow-violet-600/20"
@@ -111,7 +111,7 @@ export const DownloadSection: React.FC = () => {
             </a>
 
             <a
-              href={APP_LINKS.github.releases}
+              href={APP_LINKS.downloads.linuxAppImage}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-[var(--bg-glass)] hover:bg-[var(--bg-card-hover)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium text-xs flex items-center justify-between transition-all"

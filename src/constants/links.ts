@@ -8,6 +8,14 @@ export const APP_LINKS = {
     allReleases: 'https://github.com/PieApps/lifemirror-desktop/releases',
     issues: 'https://github.com/PieApps/lifemirror-desktop/issues',
   },
+  downloads: {
+    windowsExe: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_x64-setup.exe',
+    windowsMsi: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_x64_en-US.msi',
+    macDmg: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_aarch64.dmg',
+    macAppTarGz: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_aarch64.app.tar.gz',
+    linuxDeb: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_amd64.deb',
+    linuxAppImage: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.3.3/lifemirror-desktop_1.3.3_amd64.AppImage',
+  },
   ecosystem: {
     chromeExtension: 'https://chromewebstore.google.com/detail/lifemirror-desktop/pblffjiaheggbamkjaojabdaemkflhmm',
     androidApp: 'https://play.google.com/store/apps/details?id=com.pieapps.lifemirror',
