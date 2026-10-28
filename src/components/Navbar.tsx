@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Github, Sun, Moon, Download, Sparkles } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { APP_LINKS } from '../constants/links';
 
 interface NavbarProps {
   theme: 'dark' | 'light';
@@ -60,14 +61,26 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
           </a>
           <a href="#pricing" className="hover:text-violet-500 transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
+          <a href="#ecosystem" className="hover:text-violet-500 transition-colors">Ecosystem</a>
           <a href="#downloads" className="hover:text-violet-500 transition-colors">Downloads</a>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <a
+            href={APP_LINKS.github.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm"
+            aria-label="GitHub Repository"
+            title="GitHub Repository"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+
           <button
             onClick={onToggleTheme}
-            className="p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm"
+            className="p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm cursor-pointer"
             aria-label="Toggle Theme"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-violet-600" />}

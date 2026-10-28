@@ -4,7 +4,7 @@ import { HelpCircle, ChevronDown, ChevronUp, HelpCircleIcon } from 'lucide-react
 interface FaqItem {
   question: string;
   answer: string;
-  category: 'Privacy' | 'Setup' | 'Features' | 'Licensing';
+  category: 'Privacy' | 'Setup' | 'Features' | 'Licensing' | 'Ecosystem';
 }
 
 export const FaqSection: React.FC = () => {
@@ -15,6 +15,16 @@ export const FaqSection: React.FC = () => {
       category: 'Setup',
       question: 'Is Ollama or local AI mandatory to use LifeMirror Desktop?',
       answer: 'No! LifeMirror Desktop works 100% standalone right out of the box. All continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, reflection notes, system tray controls, and regex focus shields work completely without Ollama. Ollama is strictly an optional enhancement if you choose to enable automated local AI summaries and offline chat.',
+    },
+    {
+      category: 'Ecosystem',
+      question: 'Where can I install the companion browser extension?',
+      answer: 'The official LifeMirror Desktop Companion Extension is available directly on the Chrome Web Store. It works seamlessly across Google Chrome, Brave, Microsoft Edge, Arc, Opera, Vivaldi, and all Chromium browsers via secure Native Messaging stdio pipes with zero open network ports.',
+    },
+    {
+      category: 'Ecosystem',
+      question: 'Is there a mobile version of LifeMirror?',
+      answer: 'Yes! LifeMirror is available for Android on Google Play as an independent, 100% offline companion. Both apps share our strict privacy philosophy: zero cloud accounts, zero telemetry, and complete on-device local storage. It lets you reflect on your phone habits and screen time on the go.',
     },
     {
       category: 'Privacy',

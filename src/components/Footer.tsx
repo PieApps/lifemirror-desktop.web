@@ -1,6 +1,7 @@
 import React from 'react';
-import { Shield, Github, Lock, Heart } from 'lucide-react';
+import { Shield, Github, Lock, Heart, Globe, Smartphone, Mail } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { APP_LINKS } from '../constants/links';
 
 interface FooterProps {
   onNavigateToPrivacy?: () => void;
@@ -29,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy }) => {
         </div>
 
         {/* Links */}
-        <div className="flex flex-wrap items-center justify-center gap-6 font-mono text-[var(--text-secondary)]">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-mono text-[var(--text-secondary)]">
           <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
           <a href="#timeline-demo" className="hover:text-violet-500 transition-colors">Timeline</a>
           <a href="#ai-experience" className="hover:text-violet-500 transition-colors">Local AI</a>
@@ -45,9 +46,49 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy }) => {
           <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
           <a href="#downloads" className="hover:text-violet-500 transition-colors">Downloads</a>
           <a href="#docs" className="hover:text-violet-500 transition-colors">Docs</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-violet-500 transition-colors flex items-center gap-1">
+
+          <span className="text-[var(--border-glass)] hidden sm:inline">|</span>
+
+          {/* GitHub Link */}
+          <a
+            href={APP_LINKS.github.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-violet-500 transition-colors flex items-center gap-1"
+          >
             <Github className="w-3.5 h-3.5" />
             <span>GitHub</span>
+          </a>
+
+          {/* Chrome Extension Link */}
+          <a
+            href={APP_LINKS.ecosystem.chromeExtension}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-violet-400 transition-colors flex items-center gap-1 text-violet-400"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>Chrome Extension</span>
+          </a>
+
+          {/* LifeMirror Mobile App Link */}
+          <a
+            href={APP_LINKS.ecosystem.androidApp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400"
+          >
+            <Smartphone className="w-3.5 h-3.5" />
+            <span>Android App</span>
+          </a>
+
+          {/* Support Email */}
+          <a
+            href={`mailto:${APP_LINKS.support.email}`}
+            className="hover:text-sky-400 transition-colors flex items-center gap-1 text-sky-400"
+          >
+            <Mail className="w-3.5 h-3.5" />
+            <span>Support</span>
           </a>
         </div>
       </div>

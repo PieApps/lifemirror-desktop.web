@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Sparkles, Shield, Cpu, Lock, ArrowDown } from 'lucide-react';
+import { Download, Sparkles, Shield, Cpu, Lock, ArrowDown, Globe, Smartphone, Github } from 'lucide-react';
+import { APP_LINKS } from '../constants/links';
 
 export const HeroSection: React.FC = () => {
   const [activeSeconds, setActiveSeconds] = useState(324);
@@ -52,7 +53,7 @@ export const HeroSection: React.FC = () => {
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
+      <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
         <a
           href="#downloads"
           className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 text-white font-semibold text-base shadow-xl shadow-violet-600/30 hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group"
@@ -67,6 +68,40 @@ export const HeroSection: React.FC = () => {
         >
           <Sparkles className="w-5 h-5 text-cyan-400" />
           <span>Explore Live Demo</span>
+        </a>
+      </div>
+
+      {/* Ecosystem quick badges */}
+      <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-[var(--text-muted)] mb-14">
+        <a
+          href={APP_LINKS.ecosystem.chromeExtension}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chrome Companion Extension on the Chrome Web Store (opens in a new tab)"
+          className="hover:text-violet-400 hover:border-violet-500/40 transition-all flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-full bg-[var(--bg-glass)] border border-[var(--border-glass)] group"
+        >
+          <Globe className="w-3.5 h-3.5 text-violet-400 group-hover:scale-110 transition-transform" />
+          <span>Chrome Companion Extension</span>
+        </a>
+        <a
+          href={APP_LINKS.ecosystem.androidApp}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LifeMirror for Android on Google Play (opens in a new tab)"
+          className="hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-full bg-[var(--bg-glass)] border border-[var(--border-glass)] group"
+        >
+          <Smartphone className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
+          <span>Android Mobile App</span>
+        </a>
+        <a
+          href={APP_LINKS.github.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LifeMirror Desktop source repository on GitHub (opens in a new tab)"
+          className="hover:text-[var(--text-primary)] hover:border-zinc-400 dark:hover:border-white/30 transition-all flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-full bg-[var(--bg-glass)] border border-[var(--border-glass)] group"
+        >
+          <Github className="w-3.5 h-3.5 text-zinc-400 group-hover:scale-110 transition-transform" />
+          <span>GitHub (MIT)</span>
         </a>
       </div>
 

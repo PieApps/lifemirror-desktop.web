@@ -1,3 +1,5 @@
+import { APP_LINKS } from '../constants/links';
+
 export interface DocArticle {
   id: string;
   title: string;
@@ -14,12 +16,17 @@ export const DOCS_ARTICLES: DocArticle[] = [
 
 LifeMirror Desktop turns your raw daily computer activity logs into a serpentine scrollable timeline, providing mindful daily summaries driven by a locally running AI model.
 
+- **GitHub Repository**: [PieApps/lifemirror-desktop](${APP_LINKS.github.repo})
+- **Releases**: [Latest Releases & Binaries](${APP_LINKS.github.releases})
+
 ---
 
 ## 1. Installation
 
 \`\`\`bash
-# Clone the repository and install Node dependencies
+# Clone the repository and run locally
+git clone ${APP_LINKS.github.repo}.git
+cd lifemirror-desktop
 npm install
 npm run tauri dev
 \`\`\`
@@ -30,14 +37,24 @@ npm run tauri dev
 
 Browser tab tracking uses Chrome's secure **Native Messaging API** (stdio pipes) instead of local network sockets.
 
-1. Open Chrome and navigate to \`chrome://extensions/\`.
-2. Enable **Developer Mode** (top right toggle).
-3. Click **Load unpacked** and select \`companion-extension/\`.
-4. Copy your extension ID and run \`npm run install-host\`.
+- **Official Web Store**: Install directly from the [Chrome Web Store](${APP_LINKS.ecosystem.chromeExtension}). Supported on Chrome, Brave, Edge, Arc, Opera, and Vivaldi.
+- **Developer / Unpacked Mode**:
+  1. Open Chrome and navigate to \`chrome://extensions/\`.
+  2. Enable **Developer Mode** (top right toggle).
+  3. Click **Load unpacked** and select \`companion-extension/\`.
+  4. Run \`npm run install-host\` to register the native messaging host manifest.
 
 ---
 
-## 3. Local AI Integration (Ollama)
+## 3. LifeMirror Mobile Companion (Android)
+
+For mindful habit and time reflection when you are away from your computer:
+- Download [LifeMirror on Google Play](${APP_LINKS.ecosystem.androidApp}).
+- 100% offline, zero cloud accounts, and serpentine timeline tracking on your mobile phone.
+
+---
+
+## 4. Local AI Integration (Ollama)
 
 LifeMirror's AI features run completely offline on your computer.
 

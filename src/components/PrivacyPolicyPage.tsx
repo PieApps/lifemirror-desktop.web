@@ -18,6 +18,7 @@ import {
   CheckCircle2,
   AlertTriangle
 } from 'lucide-react';
+import { APP_LINKS } from '../constants/links';
 
 interface PrivacyPolicyPageProps {
   onBackToHome: () => void;
@@ -244,7 +245,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
             </div>
           </div>
           <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-            The extension does not inject remote scripts, read web page DOM contents, or transmit browsing history to external endpoints.
+            The companion extension is distributed via the <a href={APP_LINKS.ecosystem.chromeExtension} target="_blank" rel="noopener noreferrer" className="text-amber-400 underline hover:text-white">Chrome Web Store</a> and does not inject remote scripts, read web page DOM contents, or transmit browsing history to external endpoints.
           </p>
         </div>
       )
@@ -299,11 +300,11 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
               <Shield className="w-4 h-4 text-purple-400" /> Transparent & Auditable Codebase
             </div>
             <p className="text-gray-300 text-[11px] leading-relaxed">
-              Because LifeMirror Desktop is released under the open-source MIT License, developers and cybersecurity auditors can inspect the source code on GitHub to verify our offline claims and zero-telemetry implementation.
+              Because LifeMirror Desktop is released under the open-source MIT License, developers and cybersecurity auditors can inspect the source code on <a href={APP_LINKS.github.repo} target="_blank" rel="noopener noreferrer" className="text-purple-300 underline hover:text-white">GitHub (PieApps/lifemirror-desktop)</a> to verify our offline claims and zero-telemetry implementation.
             </p>
           </div>
           <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-            If you have security or privacy questions regarding the software architecture, open an issue on our GitHub repository or contact our core maintainers.
+            If you have security or privacy questions regarding the software architecture, open an issue on our <a href={APP_LINKS.github.issues} target="_blank" rel="noopener noreferrer" className="text-purple-300 underline hover:text-white">GitHub repository</a> or contact our core maintainers directly at <a href={`mailto:${APP_LINKS.support.email}`} className="text-purple-300 underline hover:text-white">{APP_LINKS.support.email}</a>.
           </p>
         </div>
       )
