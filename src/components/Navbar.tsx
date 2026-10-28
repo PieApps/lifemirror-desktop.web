@@ -6,10 +6,10 @@ import { APP_LINKS } from '../constants/links';
 interface NavbarProps {
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
-  onNavigateToPrivacy?: () => void;
+  onNavigateToSection?: (sectionId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigateToPrivacy }) => {
+export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigateToSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,6 +19,13 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLinkClick = (targetId: string, e: React.MouseEvent) => {
+    if (onNavigateToSection) {
+      e.preventDefault();
+      onNavigateToSection(targetId);
+    }
+  };
 
   return (
     <nav
@@ -30,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" onClick={(e) => handleLinkClick('', e)} className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 via-cyan-400 to-violet-500 p-[2px] shadow-lg shadow-violet-500/20 transition-transform duration-300 group-hover:scale-105 overflow-hidden">
             <img
               src={logoImg}
@@ -49,20 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
-          <a href="#features" className="hover:text-violet-500 transition-colors">Features</a>
-          <a href="#timeline-demo" className="hover:text-violet-500 transition-colors">Timeline</a>
-          <a href="#ai-experience" className="hover:text-violet-500 transition-colors">Local AI</a>
-          <a
-            href="#privacy-policy"
-            onClick={() => onNavigateToPrivacy && onNavigateToPrivacy()}
-            className="hover:text-violet-500 transition-colors flex items-center gap-1 text-emerald-500 font-semibold"
-          >
-            <span>Privacy Policy</span>
-          </a>
-          <a href="#pricing" className="hover:text-violet-500 transition-colors">Pricing</a>
-          <a href="#faq" className="hover:text-violet-500 transition-colors">FAQ</a>
-          <a href="#ecosystem" className="hover:text-violet-500 transition-colors">Ecosystem</a>
-          <a href="#downloads" className="hover:text-violet-500 transition-colors">Downloads</a>
+          <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
+          <a href="#timeline-demo" onClick={(e) => handleLinkClick('timeline-demo', e)} className="hover:text-violet-500 transition-colors">Timeline</a>
+          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">Local AI</a>
+          <a href="#privacy" onClick={(e) => handleLinkClick('privacy', e)} className="hover:text-violet-500 transition-colors">Privacy</a>
+          <a href="#pricing" onClick={(e) => handleLinkClick('pricing', e)} className="hover:text-violet-500 transition-colors">Pricing</a>
+          <a href="#faq" onClick={(e) => handleLinkClick('faq', e)} className="hover:text-violet-500 transition-colors">FAQ</a>
+          <a href="#ecosystem" onClick={(e) => handleLinkClick('ecosystem', e)} className="hover:text-violet-500 transition-colors">Ecosystem</a>
+          <a href="#downloads" onClick={(e) => handleLinkClick('downloads', e)} className="hover:text-violet-500 transition-colors">Downloads</a>
         </div>
 
         {/* Actions */}
@@ -88,6 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
 
           <a
             href="#downloads"
+            onClick={(e) => handleLinkClick('downloads', e)}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium text-sm hover:from-violet-500 hover:to-indigo-500 shadow-lg shadow-violet-500/25 transition-all hover:scale-105"
           >
             <Download className="w-4 h-4" />

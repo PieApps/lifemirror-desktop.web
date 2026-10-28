@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Lock, EyeOff, ShieldCheck, Database, RefreshCw, Key } from 'lucide-react';
+import { Lock, EyeOff, ShieldCheck, Database, RefreshCw, Key, ArrowRight } from 'lucide-react';
 
-export const PrivacyInspector: React.FC = () => {
+interface PrivacyInspectorProps {
+  onNavigateToPrivacyPolicy?: () => void;
+}
+
+export const PrivacyInspector: React.FC<PrivacyInspectorProps> = ({ onNavigateToPrivacyPolicy }) => {
   const [isIncognito, setIsIncognito] = useState(false);
 
   return (
@@ -95,6 +99,32 @@ export const PrivacyInspector: React.FC = () => {
             )}
           </div>
         </div>
+      </div>
+
+      {/* Full Privacy Policy Link Callout */}
+      <div className="mt-10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-left">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <ShieldCheck className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-[var(--text-primary)]">Zero-Cloud Legal & Technical Disclosures</div>
+            <div className="text-xs text-[var(--text-muted)] font-mono">Detailed audit guarantees, local key management, and data purge terms.</div>
+          </div>
+        </div>
+        <a
+          href="#privacy-policy"
+          onClick={(e) => {
+            if (onNavigateToPrivacyPolicy) {
+              e.preventDefault();
+              onNavigateToPrivacyPolicy();
+            }
+          }}
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold transition-all hover:scale-105 shrink-0"
+        >
+          <span>Read Full Privacy Policy</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </a>
       </div>
     </section>
   );

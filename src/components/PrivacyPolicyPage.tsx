@@ -403,7 +403,11 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    onClick={() => setActiveSectionId(section.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveSectionId(section.id);
+                      document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className={`w-full text-left px-3 py-2.5 rounded-xl font-mono text-xs flex items-center gap-2.5 transition-all ${
                       isActive
                         ? 'bg-violet-600 text-white font-semibold shadow-lg shadow-violet-600/30'

@@ -34,10 +34,21 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash.startsWith('#privacy-policy')) {
+      const hash = window.location.hash;
+      if (hash.startsWith('#privacy-policy')) {
         setCurrentView('privacy-policy');
-      } else if (window.location.hash === '' || window.location.hash === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
         setCurrentView('showcase');
+        if (hash && hash !== '#' && hash !== '#/') {
+          const targetId = hash.replace(/^#/, '');
+          setTimeout(() => {
+            const el = document.getElementById(targetId);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 60);
+        }
       }
     };
 
@@ -53,6 +64,35 @@ export const App: React.FC = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+  const handleNavigateToSection = (sectionId: string) => {
+    if (currentView === 'privacy-policy') {
+      window.location.hash = sectionId ? `#${sectionId}` : '#';
+      setCurrentView('showcase');
+      setTimeout(() => {
+        if (sectionId) {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 60);
+    } else {
+      window.location.hash = sectionId ? `#${sectionId}` : '#';
+      if (sectionId) {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleNavigateToPrivacyPolicy = () => {
+    window.location.hash = '#privacy-policy';
+    setCurrentView('privacy-policy');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleBackToHome = () => {
     window.location.hash = '';
     setCurrentView('showcase');
@@ -61,7 +101,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] selection:bg-violet-500 selection:text-white transition-colors duration-300">
-      <Navbar theme={theme} onToggleTheme={toggleTheme} onNavigateToPrivacy={() => setCurrentView('privacy-policy')} />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} onNavigateToSection={handleNavigateToSection} />
       <main className="pt-16">
         {currentView === 'privacy-policy' ? (
           <PrivacyPolicyPage onBackToHome={handleBackToHome} />
@@ -73,7 +113,7 @@ export const App: React.FC = () => {
             <SCurveDemo />
             <LocalAiSimulator />
             <InterdictionDemo />
-            <PrivacyInspector />
+            <PrivacyInspector onNavigateToPrivacyPolicy={handleNavigateToPrivacyPolicy} />
             <ArchitectureSection />
             <PricingSection />
             <FaqSection />
@@ -83,7 +123,7 @@ export const App: React.FC = () => {
           </>
         )}
       </main>
-      <Footer onNavigateToPrivacy={() => setCurrentView('privacy-policy')} />
+      <Footer onNavigateToPrivacy={handleNavigateToPrivacyPolicy} onNavigateToSection={handleNavigateToSection} />
     </div>
   );
 };
