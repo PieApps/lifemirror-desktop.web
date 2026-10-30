@@ -25,14 +25,14 @@ export const FeatureGrid: React.FC = () => {
     },
     {
       title: 'Reflect',
-      badge: 'Offline Intelligence',
+      badge: 'AI Optional',
       icon: Bot,
       color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
       items: [
-        'Pluggable Ollama local AI integration (localhost:11434)',
-        '2-sentence daily mindfulness reflection cards',
-        'Interactive character-by-character streaming AI chat',
-        'Encrypted local reflection journal editor',
+        'Encrypted local reflection journal & manual daily notes (Standalone)',
+        'Optional pluggable Ollama local AI integration (localhost:11434)',
+        'Optional 2-sentence daily mindfulness reflection cards',
+        'Optional character-by-character offline streaming AI chat',
       ],
     },
     {
@@ -41,8 +41,8 @@ export const FeatureGrid: React.FC = () => {
       icon: Shield,
       color: 'text-red-400 border-red-500/30 bg-red-500/10',
       items: [
-        'Phase 1: Hyper-fast Regex Evaluation Engine for blacklists',
-        'Phase 2: Asynchronous Local AI Intention Lock evaluator',
+        'Phase 1: Hyper-fast Regex Engine for blacklists (Standalone, zero AI)',
+        'Phase 2: Optional Local AI Intention Lock evaluator (Ollama)',
         'Fullscreen glassmorphic overlay shield on distraction',
         'Instant 1-click Incognito memory wipe & blur lockout',
       ],

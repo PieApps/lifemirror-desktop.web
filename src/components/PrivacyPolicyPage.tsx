@@ -65,8 +65,8 @@ LifeMirror Desktop is engineered as a 100% offline local utility. No user data, 
 2. SQLCIPHER AES-256 STORAGE & KEY SECURITY
 All database write transactions are encrypted at the page level using SQLCipher (AES-256-CBC). Data files stored on disk (activity_logs, journal_entries, settings) remain unreadable without the local master encryption key. Encryption keys never leave local device storage.
 
-3. LOCAL OLLAMA LLM PROCESSING
-AI reflections and focus summaries are computed exclusively on your device via local Ollama inference models. Prompts and completions are processed in local memory and are never sent to third-party LLM APIs or external cloud services.
+3. OPTIONAL LOCAL OLLAMA LLM PROCESSING
+AI reflections and focus summaries are computed exclusively on your device via local Ollama inference models. This feature is completely optional and disabled unless configured by the user. When enabled, prompts and completions are processed in local memory and are never sent to third-party LLM APIs or external cloud services.
 
 4. NATIVE OS FOCUS & ACTIVITY TRACKING
 The native Tauri 2.0 Rust backend captures window titles and active application process names locally to render time-series focus analysis. Activity logs are stored exclusively in your local encrypted SQLCipher database. User-defined blocklists allow instant suppression of tracking for sensitive applications.
@@ -102,7 +102,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       content: (
         <div className="space-y-4">
           <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
-            LifeMirror Desktop was designed from the ground up on a strict <strong className="text-[var(--text-primary)]">Zero-Cloud Guarantee</strong>. Unlike cloud-reliant productivity tools, LifeMirror operates entirely within your local computing environment.
+            LifeMirror Desktop was designed from the ground up on a strict <strong className="text-[var(--text-primary)]">Zero-Cloud Guarantee</strong>. Unlike cloud-reliant productivity tools, LifeMirror Desktop operates entirely within your local computing environment.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
             <div className="bg-[var(--bg-glass)] p-4 rounded-xl border border-emerald-500/25">
@@ -160,15 +160,15 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
     },
     {
       id: 'ollama-llm',
-      title: '3. Local Ollama LLM Processing & Privacy',
-      category: 'AI Infrastructure',
+      title: '3. Optional Local Ollama LLM Processing & Privacy',
+      category: 'Optional AI',
       icon: Cpu,
-      badge: 'On-Device Inference',
+      badge: 'Optional On-Device Inference',
       badgeColor: 'text-violet-600 dark:text-violet-400 border-violet-500/30 bg-violet-500/10',
       content: (
         <div className="space-y-4">
           <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
-            LifeMirror Desktop leverages locally deployed large language models (such as <strong className="text-[var(--text-primary)]">Ollama with Llama 3 or Mistral</strong>) running on your hardware (CPU or GPU).
+            LifeMirror Desktop works 100% standalone. If you choose to enable automated AI reflections, you can optionally connect locally deployed large language models (such as <strong className="text-[var(--text-primary)]">Ollama with Llama 3 or Mistral</strong>) running on your hardware (CPU or GPU).
           </p>
           <div className="p-4 rounded-xl bg-violet-500/10 border border-violet-500/25 space-y-2">
             <div className="flex items-center gap-2 text-violet-600 dark:text-violet-300 font-semibold text-xs font-mono">
@@ -194,7 +194,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
       content: (
         <div className="space-y-4">
           <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">
-            To provide continuous focus analytics and S-Curve timeline visualizer metrics, LifeMirror runs a low-resource background loop via its Rust/Tauri 2.0 core.
+            To provide continuous focus analytics and S-Curve timeline visualizer metrics, LifeMirror Desktop runs a low-resource background loop via its Rust/Tauri 2.0 core.
           </p>
           <ul className="space-y-2 font-mono text-xs text-[var(--text-secondary)]">
             <li className="flex items-start gap-2 bg-[var(--bg-glass)] p-3 rounded-lg border border-[var(--border-glass)]">
@@ -350,7 +350,7 @@ LifeMirror Desktop contains zero third-party data broker integrations, zero ad t
           LifeMirror Desktop Privacy Policy
         </h1>
         <p className="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed">
-          Detailed technical and legal breakdown of our 100% offline flight model, SQLCipher AES-256 local database encryption, on-device Ollama AI processing, and strict user data ownership.
+          Detailed technical and legal breakdown of our 100% offline flight model, SQLCipher AES-256 local database encryption, optional on-device Ollama AI processing, and strict user data ownership.
         </p>
 
         {/* Quick Action Buttons */}

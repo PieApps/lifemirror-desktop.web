@@ -35,7 +35,7 @@ export const PricingSection: React.FC = () => {
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
           LifeMirror Desktop is completely free to download, use, and inspect.
           We build with a local-first philosophy: your data belongs to you, and privacy tools shouldn&apos;t be behind monthly subscriptions.
-          If LifeMirror brings value to your daily focus, consider buying us a coffee or sponsoring on GitHub!
+          If LifeMirror Desktop brings value to your daily focus, consider buying us a coffee or sponsoring on GitHub!
         </p>
       </div>
 
@@ -75,9 +75,10 @@ export const PricingSection: React.FC = () => {
             {/* Included Feature List */}
             <div className="space-y-3.5 border-t border-[var(--border-glass)] pt-6 pb-2 text-sm text-[var(--text-secondary)]">
               {[
-                'Full desktop app access (Windows, macOS, Linux)',
+                'Full LifeMirror Desktop app access (Windows, macOS, Linux)',
                 '100% Offline SQLCipher encrypted local database',
-                'Pluggable Local AI (Ollama) reflection engine',
+                '100% Standalone operation (no Ollama or AI required)',
+                'Optional pluggable Local AI (Ollama) reflection engine',
                 'Active Interdiction Shield & regex focus blocking',
                 'Chrome Companion Extension & Native Host bridge',
                 'One-click Incognito protocol & memory wipe',
@@ -97,10 +98,10 @@ export const PricingSection: React.FC = () => {
               className="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-violet-600/25 transition-all flex items-center justify-center gap-2 group"
             >
               <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-              <span>Download LifeMirror Free</span>
+              <span>Download LifeMirror Desktop Free</span>
             </a>
             <p className="text-center text-[11px] font-mono text-[var(--text-muted)] mt-2.5">
-              Zero accounts, zero signups, zero credit cards required
+              Runs on any PC or Mac (&lt;50MB RAM). Zero AI setup required.
             </p>
           </div>
         </div>
@@ -120,7 +121,7 @@ export const PricingSection: React.FC = () => {
                 <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)]">Pay What You Want</span>
               </div>
               <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
-                LifeMirror is independently built. Support our work to fund cross-platform releases, offline AI research, and maintenance.
+                LifeMirror Desktop is independently built. Support our work to fund cross-platform releases, offline focus utilities, and maintenance.
               </p>
             </div>
 

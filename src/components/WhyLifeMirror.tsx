@@ -6,7 +6,7 @@ export const WhyLifeMirror: React.FC = () => {
     <section className="py-20 px-6 max-w-7xl mx-auto border-t border-b border-[var(--border-glass)]">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
-          Why LifeMirror Exists
+          Why LifeMirror Desktop Exists
         </span>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-3 mb-6">
           Your Digital Footprint Belongs to You.
@@ -31,9 +31,9 @@ export const WhyLifeMirror: React.FC = () => {
           <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
             <Cpu className="w-6 h-6" />
           </div>
-          <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">Optional Local AI (Ollama)</h3>
+          <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">Standalone First (AI Optional)</h3>
           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-            Optionally plug in Ollama (`http://localhost:11434`) for daily AI reflections & interactive Q&A on your GPU/CPU. Zero cloud LLM API calls.
+            LifeMirror Desktop works 100% standalone out of the box. You can optionally connect Ollama (`http://localhost:11434`) for automated daily summaries and local chat with zero cloud calls.
           </p>
         </div>
 

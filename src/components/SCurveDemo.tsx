@@ -33,7 +33,7 @@ export const SCurveDemo: React.FC = () => {
           The Serpentine S-Curve Timeline
         </h2>
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
-          Experience how LifeMirror maps computer focus sessions along a smooth winding cubic Bézier curve. Click any node to inspect details or expand grouped tab accordions!
+          Experience how LifeMirror Desktop maps your computer focus sessions along a smooth winding cubic Bézier curve. 100% standalone and private — click any node to inspect details or expand grouped tab accordions!
         </p>
       </div>
 

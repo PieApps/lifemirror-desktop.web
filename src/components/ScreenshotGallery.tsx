@@ -93,15 +93,15 @@ export const ScreenshotGallery: React.FC = () => {
     },
     {
       id: 'ai',
-      label: 'Local AI Reflections',
+      label: 'AI Reflections (Optional)',
       icon: Bot,
-      description: 'Ollama local AI generates 2-sentence daily mindfulness reflections and streams answer responses directly offline.',
+      description: 'Optionally connect Ollama to generate 2-sentence daily mindfulness reflections. All core tracking, timelines, and shields run completely standalone without AI.',
       renderMockup: () => (
         <div className="w-full bg-[#0d0d11] p-6 rounded-2xl border border-white/10 shadow-2xl relative font-sans text-left">
           <div className="p-5 rounded-xl bg-gradient-to-r from-violet-900/40 to-indigo-900/40 border border-violet-500/30 mb-4">
             <div className="flex items-center gap-2 mb-2 text-violet-300 font-semibold text-sm">
               <Bot className="w-4 h-4 text-violet-400" />
-              <span>Offline AI Mindfulness Card (llama3.2)</span>
+              <span>Optional AI Mindfulness Card (llama3.2)</span>
             </div>
             <p className="text-xs text-gray-300 leading-relaxed font-mono">
               "You spent 4.5 hours in deep Rust engineering today. Active Interdiction successfully repelled 1 distraction event during intense focus."
@@ -114,7 +114,7 @@ export const ScreenshotGallery: React.FC = () => {
       id: 'interdiction',
       label: 'Active Interdiction',
       icon: ShieldAlert,
-      description: 'Real-time focus defense system that detects blacklisted regex rules or AI intention violations and blocks distracting windows.',
+      description: 'Real-time focus defense system that blocks distracting windows using hyper-fast regex rules (plus optional AI intention locks).',
       renderMockup: () => (
         <div className="w-full bg-black/90 p-8 rounded-2xl border border-red-500/40 shadow-2xl backdrop-blur-2xl relative text-center">
           <div className="w-14 h-14 rounded-2xl bg-red-500/20 border border-red-500/40 flex items-center justify-center mx-auto mb-4">

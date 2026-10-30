@@ -233,9 +233,9 @@ export const DownloadSection: React.FC = () => {
             <div className="text-[var(--text-muted)] text-[11px]">Run `npm run install-host` to register stdio pipe.</div>
           </div>
 
-          <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)]">
-            <div className="text-violet-400 font-bold mb-1">4. Optional Local AI</div>
-            <div className="text-[var(--text-muted)] text-[11px]">Install Ollama anytime to unlock automated AI reflections.</div>
+          <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-emerald-500/30">
+            <div className="text-emerald-400 font-bold mb-1">4. Optional Local AI</div>
+            <div className="text-[var(--text-muted)] text-[11px]">Install Ollama anytime for automated summaries. (Optional — Steps 1–3 give you 100% of LifeMirror Desktop!)</div>
           </div>
         </div>
       </div>

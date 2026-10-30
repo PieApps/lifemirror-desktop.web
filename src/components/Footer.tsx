@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy, onNavigateT
             <span className="font-display font-bold text-base text-[var(--text-primary)]">LifeMirror Desktop</span>
           </a>
           <p className="text-[var(--text-muted)] max-w-sm text-center md:text-left text-[11px] font-mono">
-            Privacy-first local AI productivity & focus reflection utility. 100% offline. Zero telemetry.
+            Privacy-first desktop focus tracker &amp; serpentine timeline utility. 100% offline. Zero telemetry. Works standalone (optional local AI).
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToPrivacy, onNavigateT
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-mono text-[var(--text-secondary)]">
           <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
           <a href="#timeline-demo" onClick={(e) => handleLinkClick('timeline-demo', e)} className="hover:text-violet-500 transition-colors">Timeline</a>
-          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">Local AI</a>
+          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">AI (Optional)</a>
           <a href="#privacy" onClick={(e) => handleLinkClick('privacy', e)} className="hover:text-violet-500 transition-colors">Privacy</a>
           <a href="#pricing" onClick={(e) => handleLinkClick('pricing', e)} className="hover:text-violet-500 transition-colors">Pricing</a>
           <a href="#faq" onClick={(e) => handleLinkClick('faq', e)} className="hover:text-violet-500 transition-colors">FAQ</a>

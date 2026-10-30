@@ -13,8 +13,13 @@ export const FaqSection: React.FC = () => {
   const faqs: FaqItem[] = [
     {
       category: 'Setup',
-      question: 'Is Ollama or local AI mandatory to use LifeMirror Desktop?',
-      answer: 'No! LifeMirror Desktop works 100% standalone right out of the box. All continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, reflection notes, system tray controls, and regex focus shields work completely without Ollama. Ollama is strictly an optional enhancement if you choose to enable automated local AI summaries and offline chat.',
+      question: 'Do I need Ollama or local AI to use LifeMirror Desktop?',
+      answer: 'No! LifeMirror Desktop works 100% standalone right out of the box. Continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, manual reflection notes, system tray controls, and regex focus shields work completely without Ollama or any AI. Ollama is strictly an optional enhancement if you choose to enable automated AI reflection cards and local chat.',
+    },
+    {
+      category: 'Setup',
+      question: 'Do I need a high-end GPU or powerful computer to run LifeMirror Desktop?',
+      answer: 'Not at all! Because LifeMirror Desktop is built natively with Rust and Tauri 2.0, the core application is ultra-lightweight (~15MB installer, <50MB RAM). It runs smoothly on any standard laptop or desktop without needing a dedicated GPU or high-end CPU. A GPU is only relevant if you voluntarily choose to run Ollama for local LLMs.',
     },
     {
       category: 'Ecosystem',
@@ -23,8 +28,8 @@ export const FaqSection: React.FC = () => {
     },
     {
       category: 'Ecosystem',
-      question: 'Is there a mobile version of LifeMirror?',
-      answer: 'Yes! LifeMirror is available for Android on Google Play as an independent, 100% offline companion. Both apps share our strict privacy philosophy: zero cloud accounts, zero telemetry, and complete on-device local storage. It lets you reflect on your phone habits and screen time on the go.',
+      question: 'Is there a mobile version of LifeMirror Desktop?',
+      answer: 'Yes! LifeMirror for Android is available on Google Play as an independent, 100% offline companion. Both apps share our strict privacy philosophy: zero cloud accounts, zero telemetry, and complete on-device local storage. It lets you reflect on your phone habits and screen time on the go.',
     },
     {
       category: 'Privacy',
@@ -34,7 +39,7 @@ export const FaqSection: React.FC = () => {
     {
       category: 'Privacy',
       question: 'How does Chrome browser tab tracking work without opening network ports?',
-      answer: 'Unlike web tools that spin up unencrypted local HTTP servers or WebSockets, LifeMirror connects to Chrome via Chrome Native Messaging API over secure stdio stdin/stdout pipes. No listening network ports are exposed on your computer.',
+      answer: 'Unlike web tools that spin up unencrypted local HTTP servers or WebSockets, LifeMirror Desktop connects to Chrome via Chrome Native Messaging API over secure stdio stdin/stdout pipes. No listening network ports are exposed on your computer.',
     },
     {
       category: 'Licensing',

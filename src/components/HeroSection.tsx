@@ -36,7 +36,7 @@ export const HeroSection: React.FC = () => {
       {/* Pill Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-xs font-medium mb-8 backdrop-blur-md">
         <Shield className="w-3.5 h-3.5 text-violet-400 animate-pulse" />
-        <span>100% Offline • Zero Telemetry • Works Standalone (Optional Local AI)</span>
+        <span>100% Standalone • Zero Setup • Optional Local AI</span>
       </div>
 
       {/* Main Title */}
@@ -48,18 +48,18 @@ export const HeroSection: React.FC = () => {
       </h1>
 
       {/* Subtitle */}
-      <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mb-10 leading-relaxed font-normal">
-        The privacy-first desktop utility that turns your continuous computer focus logs into a winding serpentine timeline with offline AI reflections and active distraction defense.
+      <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mb-8 leading-relaxed font-normal">
+        The zero-telemetry desktop utility that turns your computer focus logs into a winding serpentine timeline with active distraction defense. Works 100% standalone out of the box — zero AI, zero cloud, and zero accounts required.
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
         <a
           href="#downloads"
           className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 text-white font-semibold text-base shadow-xl shadow-violet-600/30 hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group"
         >
           <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
-          <span>Download for {detectedOs}</span>
+          <span>Download LifeMirror Desktop for {detectedOs}</span>
         </a>
 
         <a
@@ -69,6 +69,21 @@ export const HeroSection: React.FC = () => {
           <Sparkles className="w-5 h-5 text-cyan-400" />
           <span>Explore Live Demo</span>
         </a>
+      </div>
+
+      {/* Customer Reassurance Strip (Don't Make Me Think) */}
+      <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-[var(--text-muted)] mb-8">
+        <span className="flex items-center gap-1.5 text-emerald-400">
+          <Shield className="w-3.5 h-3.5" /> 100% Standalone (No Ollama Needed)
+        </span>
+        <span className="text-[var(--border-glass)] hidden sm:inline">•</span>
+        <span className="flex items-center gap-1.5 text-cyan-400">
+          <Cpu className="w-3.5 h-3.5" /> Ultra-Lightweight (&lt;50MB RAM)
+        </span>
+        <span className="text-[var(--border-glass)] hidden sm:inline">•</span>
+        <span className="flex items-center gap-1.5 text-violet-400">
+          <Lock className="w-3.5 h-3.5" /> Zero Cloud Telemetry
+        </span>
       </div>
 
       {/* Ecosystem quick badges */}
@@ -135,7 +150,7 @@ export const HeroSection: React.FC = () => {
 
           <div className="text-right">
             <div className="text-sm font-mono font-bold text-violet-400">{formatTime(activeSeconds)}</div>
-            <div className="text-[11px] text-[var(--text-muted)]">Continuous OS Focus</div>
+            <div className="text-[11px] text-[var(--text-muted)]">Continuous Focus (Standalone)</div>
           </div>
         </div>
       </div>

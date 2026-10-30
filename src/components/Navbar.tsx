@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
             <span className="font-display font-bold text-lg text-[var(--text-primary)] tracking-tight flex items-center gap-1.5">
               LifeMirror <span className="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 dark:text-violet-300 border border-violet-500/30">Desktop</span>
             </span>
-            <span className="text-[10px] text-[var(--text-muted)] -mt-1 tracking-wider uppercase">Local-First AI Reflection</span>
+            <span className="text-[10px] text-[var(--text-muted)] -mt-1 tracking-wider uppercase">100% Offline Focus Tracker</span>
           </div>
         </a>
 
@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
           <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
           <a href="#timeline-demo" onClick={(e) => handleLinkClick('timeline-demo', e)} className="hover:text-violet-500 transition-colors">Timeline</a>
-          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">Local AI</a>
+          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">AI (Optional)</a>
           <a href="#privacy" onClick={(e) => handleLinkClick('privacy', e)} className="hover:text-violet-500 transition-colors">Privacy</a>
           <a href="#pricing" onClick={(e) => handleLinkClick('pricing', e)} className="hover:text-violet-500 transition-colors">Pricing</a>
           <a href="#faq" onClick={(e) => handleLinkClick('faq', e)} className="hover:text-violet-500 transition-colors">FAQ</a>

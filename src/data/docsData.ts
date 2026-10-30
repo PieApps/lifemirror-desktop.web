@@ -14,7 +14,7 @@ export const DOCS_ARTICLES: DocArticle[] = [
     category: 'User',
     content: `# 🖥️ LifeMirror Desktop: User Guide
 
-LifeMirror Desktop turns your raw daily computer activity logs into a serpentine scrollable timeline, providing mindful daily summaries driven by a locally running AI model.
+LifeMirror Desktop turns your raw daily computer activity logs into a serpentine scrollable timeline with continuous focus metrics, distraction defense, and optional offline AI summaries.
 
 - **GitHub Repository**: [PieApps/lifemirror-desktop](${APP_LINKS.github.repo})
 - **Releases**: [Latest Releases & Binaries](${APP_LINKS.github.releases})
@@ -54,12 +54,12 @@ For mindful habit and time reflection when you are away from your computer:
 
 ---
 
-## 4. Local AI Integration (Ollama)
+## 4. Optional Local AI Integration (Ollama)
 
-LifeMirror's AI features run completely offline on your computer.
+LifeMirror Desktop operates 100% standalone out of the box. If you wish to enable automated 2-sentence summaries and offline chat, you can optionally connect Ollama:
 
 1. Download and run [Ollama](https://ollama.com).
-2. Open LifeMirror **Settings** and set endpoint to \`http://localhost:11434\`.
+2. Open LifeMirror Desktop **Settings** and set endpoint to \`http://localhost:11434\`.
 3. Click **Download Model Native** to download \`llama3.2\` directly inside the app.
 `
   },
@@ -102,11 +102,11 @@ $$x = (i \\pmod 2 == 0) ? \\text{width} \\times 0.875 : \\text{width} \\times 0.
   },
   {
     id: 'ollama-setup',
-    title: 'Ollama Model Management',
+    title: 'Optional Ollama Setup',
     category: 'Setup',
-    content: `# 🤖 Local AI Configuration with Ollama
+    content: `# 🤖 Optional Local AI Configuration with Ollama
 
-LifeMirror interfaces with local LLMs via Ollama's HTTP API.
+LifeMirror Desktop works 100% standalone. If you choose to enable local LLMs, LifeMirror Desktop interfaces via Ollama's HTTP API.
 
 1. **Endpoint**: \`http://localhost:11434/api/generate\`
 2. **Model Recommendations**: \`llama3.2\`, \`mistral\`, \`phi3\`

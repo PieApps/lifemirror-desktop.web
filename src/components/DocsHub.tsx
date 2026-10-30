@@ -31,7 +31,7 @@ export const DocsHub: React.FC = () => {
           Complete Software Reference
         </h2>
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
-          Browse full user guides, developer schemas, Ollama model setups, and safety workflows.
+          Browse full user guides, developer schemas, optional Ollama model setups, and safety workflows.
         </p>
       </div>
 

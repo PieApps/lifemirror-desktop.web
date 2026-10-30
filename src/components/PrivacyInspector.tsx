@@ -88,7 +88,7 @@ export const PrivacyInspector: React.FC<PrivacyInspectorProps> = ({ onNavigateTo
                 <div className="font-bold text-amber-400 mb-1">🥷 Incognito Active</div>
                 <div>• In-memory active session cache wiped</div>
                 <div>• Database write guardrail enforced</div>
-                <div>• Volatile non-saved AI memory active</div>
+                <div>• Non-saved volatile memory active (zero disk writes)</div>
               </div>
             ) : (
               <div>

@@ -26,7 +26,7 @@ export const InterdictionDemo: React.FC = () => {
           Real-Time Focus Defense Shield
         </h2>
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-sm sm:text-base">
-          Transition from passive log tracking to active distraction defense. Detect blacklisted regex rules or AI intention violations instantly!
+          Transition from passive log tracking to active distraction defense. Detect blacklisted regex rules instantly with zero AI, or optionally enable local AI intention locks!
         </p>
       </div>
 
@@ -110,7 +110,7 @@ export const InterdictionDemo: React.FC = () => {
                   : 'bg-[var(--bg-glass)] border-[var(--border-glass)] text-[var(--text-secondary)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-primary)]'
               }`}
             >
-              🌐 Reddit (AI Intention Lock)
+              🌐 Reddit (Optional AI Lock)
             </button>
           </div>
         </div>
