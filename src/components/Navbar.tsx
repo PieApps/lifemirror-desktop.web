@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
             <span className="font-display font-bold text-lg text-[var(--text-primary)] tracking-tight flex items-center gap-1.5">
               LifeMirror <span className="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 dark:text-violet-300 border border-violet-500/30">Desktop</span>
             </span>
-            <span className="text-[10px] text-[var(--text-muted)] -mt-1 tracking-wider uppercase">100% Offline Focus Tracker</span>
+            <span className="text-[10px] text-[var(--text-muted)] -mt-1 tracking-wider uppercase">KNOW WHERE YOUR TIME WENT</span>
           </div>
         </a>
 
