@@ -1,8 +1,15 @@
-import React from 'react';
-import { Download, Monitor, Apple, Terminal, CheckCircle, Cpu, HardDrive, Globe, Smartphone, ExternalLink, Github, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, Monitor, Apple, Terminal, CheckCircle, Cpu, HardDrive, Globe, Smartphone, ExternalLink, Github, Sparkles, ShieldCheck, Info, Copy, Check } from 'lucide-react';
 import { APP_LINKS } from '../constants/links';
 
 export const DownloadSection: React.FC = () => {
+  const [copiedCmd, setCopiedCmd] = useState<string | null>(null);
+
+  const copyToClipboard = (cmd: string) => {
+    navigator.clipboard.writeText(cmd);
+    setCopiedCmd(cmd);
+    setTimeout(() => setCopiedCmd(null), 2000);
+  };
 
   return (
     <section id="downloads" className="py-24 px-6 max-w-7xl mx-auto text-center border-t border-[var(--border-glass)]">
@@ -236,6 +243,103 @@ export const DownloadSection: React.FC = () => {
           <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-emerald-500/30">
             <div className="text-emerald-400 font-bold mb-1">4. Optional Local AI</div>
             <div className="text-[var(--text-muted)] text-[11px]">Install Ollama anytime for automated summaries. (Optional — Steps 1–3 give you 100% of LifeMirror Desktop!)</div>
+          </div>
+        </div>
+      </div>
+
+      {/* First-Time Launch & Security Notice */}
+      <div className="max-w-4xl mx-auto mt-8 glass-card p-8 text-left border border-violet-500/30 relative">
+        <div className="flex items-start gap-3.5 mb-4">
+          <div className="p-2.5 rounded-xl bg-violet-500/15 border border-violet-500/30 text-violet-400 shrink-0">
+            <ShieldCheck className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="text-base sm:text-lg font-bold text-[var(--text-primary)] flex items-center gap-2">
+              First-Time Launch & Security Notice
+            </h4>
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1 leading-relaxed">
+              LifeMirror Desktop is an independent open-source project. Because our release binaries are distributed directly without commercial signing certificates, your operating system will display a standard first-run warning. The application is completely local and zero-telemetry. Here is how to complete the one-time launch on your platform:
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          {/* Windows Instructions */}
+          <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-blue-400 font-bold text-xs uppercase tracking-wider mb-2 font-mono">
+                <Monitor className="w-4 h-4" />
+                <span>Windows 10 / 11</span>
+              </div>
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">
+                Microsoft Defender SmartScreen will show <span className="text-[var(--text-primary)] font-semibold">&ldquo;Windows protected your PC&rdquo;</span>.
+              </p>
+              <ol className="text-xs text-[var(--text-muted)] space-y-2 list-decimal list-inside font-sans">
+                <li>Click <span className="text-[var(--text-primary)] font-medium underline underline-offset-2">More info</span> on the prompt.</li>
+                <li>Click the <span className="text-violet-400 font-semibold">Run anyway</span> button to start.</li>
+              </ol>
+            </div>
+          </div>
+
+          {/* macOS Instructions */}
+          <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-[var(--text-primary)] font-bold text-xs uppercase tracking-wider mb-2 font-mono">
+                <Apple className="w-4 h-4" />
+                <span>macOS (Sequoia 15+)</span>
+              </div>
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed mb-2">
+                Gatekeeper flags unsigned web downloads on first run.
+              </p>
+              <ol className="text-xs text-[var(--text-muted)] space-y-1 list-decimal list-inside font-sans mb-3">
+                <li>Open the app once to trigger the prompt.</li>
+                <li>Go to <span className="text-[var(--text-primary)] font-medium">System Settings → Privacy & Security</span>.</li>
+                <li>Scroll down to Security and click <span className="text-violet-400 font-semibold">Open Anyway</span>.</li>
+              </ol>
+            </div>
+            <div className="pt-2 border-t border-[var(--border-glass)]">
+              <span className="text-[10px] text-[var(--text-muted)] font-mono block mb-1">Terminal alternative:</span>
+              <div className="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5 font-mono text-[10px] text-violet-300">
+                <span className="truncate mr-2">xattr -dr com.apple.quarantine &quot;/Applications/LifeMirror Desktop.app&quot;</span>
+                <button
+                  onClick={() => copyToClipboard('xattr -dr com.apple.quarantine "/Applications/LifeMirror Desktop.app"')}
+                  className="hover:text-white transition-colors shrink-0"
+                  title="Copy command"
+                >
+                  {copiedCmd === 'xattr -dr com.apple.quarantine "/Applications/LifeMirror Desktop.app"' ? (
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Linux Instructions */}
+          <div className="p-4 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2 font-mono">
+                <Terminal className="w-4 h-4" />
+                <span>Linux (.deb / AppImage)</span>
+              </div>
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed mb-2">
+                Run directly as a standalone AppImage or install Debian package.
+              </p>
+              <div className="space-y-2 text-xs font-mono text-[var(--text-muted)] mb-2">
+                <div>
+                  <span className="text-[10px] text-[var(--text-secondary)] block">Debian/Ubuntu:</span>
+                  <code className="text-[11px] text-violet-300">sudo dpkg -i lifemirror*.deb</code>
+                </div>
+                <div>
+                  <span className="text-[10px] text-[var(--text-secondary)] block">AppImage executable:</span>
+                  <code className="text-[11px] text-violet-300">chmod +x lifemirror*.AppImage</code>
+                </div>
+              </div>
+            </div>
+            <div className="pt-2 border-t border-[var(--border-glass)] text-[10px] text-[var(--text-muted)] font-sans">
+              <span className="text-amber-400 font-medium">Ubuntu 22.04+:</span> requires <code className="font-mono text-violet-300">libfuse2</code> (<code className="font-mono">sudo apt install libfuse2</code>) to execute AppImages.
+            </div>
           </div>
         </div>
       </div>

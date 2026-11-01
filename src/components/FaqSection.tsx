@@ -13,6 +13,11 @@ export const FaqSection: React.FC = () => {
   const faqs: FaqItem[] = [
     {
       category: 'Setup',
+      question: 'Why do I see a security warning when opening LifeMirror Desktop on Windows or macOS?',
+      answer: 'LifeMirror Desktop is an independent open-source project distributed directly without paid commercial signing certificates. Because operating systems flag unsigned web downloads by default, you may see Microsoft Defender SmartScreen ("Windows protected your PC") or macOS Gatekeeper. On Windows, click "More info" → "Run anyway". On macOS Sequoia (15+), open the app once to trigger the prompt, then open System Settings → Privacy & Security, scroll down to the Security section, and click "Open Anyway" (or run "xattr -dr com.apple.quarantine \'/Applications/LifeMirror Desktop.app\'" in Terminal). All code is fully open-source on GitHub, zero telemetry is collected, and all data remains encrypted on your local machine.',
+    },
+    {
+      category: 'Setup',
       question: 'Do I need Ollama or local AI to use LifeMirror Desktop?',
       answer: 'No! LifeMirror Desktop works 100% standalone right out of the box. Continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, manual reflection notes, system tray controls, and regex focus shields work completely without Ollama or any AI. Ollama is strictly an optional enhancement if you choose to enable automated AI reflection cards and local chat.',
     },
