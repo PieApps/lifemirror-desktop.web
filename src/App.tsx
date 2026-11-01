@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { ScreenshotGallery } from './components/ScreenshotGallery';
+import { ComparisonSection } from './components/ComparisonSection';
 import { WhyLifeMirror } from './components/WhyLifeMirror';
+import { ScreenshotGallery } from './components/ScreenshotGallery';
 import { SCurveDemo } from './components/SCurveDemo';
-import { LocalAiSimulator } from './components/LocalAiSimulator';
 import { InterdictionDemo } from './components/InterdictionDemo';
+import { LocalAiSimulator } from './components/LocalAiSimulator';
+import { FeatureGrid } from './components/FeatureGrid';
 import { PrivacyInspector } from './components/PrivacyInspector';
 import { ArchitectureSection } from './components/ArchitectureSection';
 import { PricingSection } from './components/PricingSection';
-import { FaqSection } from './components/FaqSection';
-import { FeatureGrid } from './components/FeatureGrid';
 import { DownloadSection } from './components/DownloadSection';
+import { FaqSection } from './components/FaqSection';
 import { DocsHub } from './components/DocsHub';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { Footer } from './components/Footer';
@@ -108,17 +109,18 @@ export const App: React.FC = () => {
         ) : (
           <>
             <HeroSection />
-            <ScreenshotGallery />
+            <ComparisonSection />
             <WhyLifeMirror />
+            <ScreenshotGallery />
             <SCurveDemo />
-            <LocalAiSimulator />
             <InterdictionDemo />
+            <LocalAiSimulator />
+            <FeatureGrid />
             <PrivacyInspector onNavigateToPrivacyPolicy={handleNavigateToPrivacyPolicy} />
             <ArchitectureSection />
             <PricingSection />
-            <FaqSection />
-            <FeatureGrid />
             <DownloadSection />
+            <FaqSection />
             <DocsHub />
           </>
         )}

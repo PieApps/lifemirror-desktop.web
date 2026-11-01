@@ -36,20 +36,20 @@ export const HeroSection: React.FC = () => {
       {/* Pill Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-xs font-medium mb-8 backdrop-blur-md">
         <Shield className="w-3.5 h-3.5 text-violet-400 animate-pulse" />
-        <span>100% Standalone • Zero Setup • Optional Local AI</span>
+        <span>100% Local-First • Zero Telemetry • No Subscriptions</span>
       </div>
 
       {/* Main Title */}
       <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.15] max-w-4xl mb-6">
-        Mirror Your Mind. <br />
+        Productivity Tracking. <br />
         <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-          Master Your Time.
+          Without Cloud Surveillance.
         </span>
       </h1>
 
       {/* Subtitle */}
       <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mb-8 leading-relaxed font-normal">
-        The zero-telemetry desktop utility that turns your computer focus logs into a winding serpentine timeline with active distraction defense. Works 100% standalone out of the box — zero AI, zero cloud, and zero accounts required.
+        The private desktop utility that turns your computer focus logs into a winding serpentine timeline with active distraction defense. 100% offline, SQLCipher-encrypted, and zero open network ports. Works standalone with optional local AI (Ollama).
       </p>
 
       {/* CTA Buttons */}

@@ -3,7 +3,7 @@ import { Lock, ShieldCheck, Cpu, HardDrive } from 'lucide-react';
 
 export const WhyLifeMirror: React.FC = () => {
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto border-t border-b border-[var(--border-glass)]">
+    <section id="why-lifemirror" className="py-20 px-6 max-w-7xl mx-auto border-t border-b border-[var(--border-glass)]">
       <div className="max-w-3xl mx-auto text-center mb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">
           Why LifeMirror Desktop Exists

@@ -55,14 +55,14 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
         </a>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
-          <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
+        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-[var(--text-secondary)]">
+          <a href="#comparison" onClick={(e) => handleLinkClick('comparison', e)} className="hover:text-violet-500 transition-colors">Why LifeMirror</a>
           <a href="#timeline-demo" onClick={(e) => handleLinkClick('timeline-demo', e)} className="hover:text-violet-500 transition-colors">Timeline</a>
+          <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
           <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">AI (Optional)</a>
           <a href="#privacy" onClick={(e) => handleLinkClick('privacy', e)} className="hover:text-violet-500 transition-colors">Privacy</a>
           <a href="#pricing" onClick={(e) => handleLinkClick('pricing', e)} className="hover:text-violet-500 transition-colors">Pricing</a>
           <a href="#faq" onClick={(e) => handleLinkClick('faq', e)} className="hover:text-violet-500 transition-colors">FAQ</a>
-          <a href="#ecosystem" onClick={(e) => handleLinkClick('ecosystem', e)} className="hover:text-violet-500 transition-colors">Ecosystem</a>
           <a href="#downloads" onClick={(e) => handleLinkClick('downloads', e)} className="hover:text-violet-500 transition-colors">Downloads</a>
         </div>
 
