@@ -57,7 +57,11 @@ export const SCurveDemo: React.FC = () => {
         <div className="flex items-center gap-4 text-[var(--text-muted)]">
           <span className="flex items-center gap-1.5 text-emerald-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            Live Active Focus Ticking
+            Live Focus Ticker
+          </span>
+          <span className="text-[var(--border-glass)] hidden sm:inline">•</span>
+          <span className="text-violet-400 hidden sm:inline">
+            💡 Click any node to add notes or expand tabs
           </span>
         </div>
       </div>

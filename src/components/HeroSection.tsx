@@ -36,30 +36,30 @@ export const HeroSection: React.FC = () => {
       {/* Pill Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-xs font-medium mb-8 backdrop-blur-md">
         <Shield className="w-3.5 h-3.5 text-violet-400 animate-pulse" />
-        <span>100% Local-First • Zero Telemetry • No Subscriptions</span>
+        <span>100% Local-First • Zero Cloud Telemetry • No Subscriptions</span>
       </div>
 
-      {/* Main Title */}
-      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.15] max-w-4xl mb-6">
-        Productivity Tracking. <br />
+      {/* Main Title (Start With Why) */}
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.12] max-w-4xl mb-6">
+        Your Attention Is Your Life. <br />
         <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-          Without Cloud Surveillance.
+          Reflect On It Without Cloud Spies.
         </span>
       </h1>
 
       {/* Subtitle */}
       <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mb-8 leading-relaxed font-normal">
-        The private desktop utility that turns your computer focus logs into a winding serpentine timeline with active distraction defense. 100% offline, SQLCipher-encrypted, and zero open network ports. Works standalone with optional local AI (Ollama).
+        Most productivity trackers monitor you like corporate surveillance, sending your window titles and private browsing to remote clouds. LifeMirror Desktop was born from a fundamental belief: <strong className="text-[var(--text-primary)]">your focus data belongs only to you</strong>. 100% offline, SQLCipher-encrypted, and zero subscriptions.
       </p>
 
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
+      {/* CTA Buttons (Don't Make Me Think: Clear primary path + instant demo) */}
+      <div className="flex flex-col sm:flex-row items-center gap-4 mb-3">
         <a
           href="#downloads"
           className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 text-white font-semibold text-base shadow-xl shadow-violet-600/30 hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group"
         >
           <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
-          <span>Download LifeMirror Desktop for {detectedOs}</span>
+          <span>Download LifeMirror Free for {detectedOs}</span>
         </a>
 
         <a
@@ -67,8 +67,13 @@ export const HeroSection: React.FC = () => {
           className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-primary)] font-medium text-base hover:bg-[var(--bg-card-hover)] hover:border-violet-500/30 transition-all flex items-center justify-center gap-2"
         >
           <Sparkles className="w-5 h-5 text-cyan-400" />
-          <span>Explore Live Demo</span>
+          <span>Explore S-Curve Demo</span>
         </a>
+      </div>
+
+      {/* 3-Second Cognitive Clarity Subtext */}
+      <div className="text-xs text-[var(--text-muted)] font-mono mb-6">
+        ✓ 100% Free &amp; Open-Source (MIT) • No account • No credit card • Ultra-light (&lt;50MB RAM)
       </div>
 
       {/* Customer Reassurance Strip (Don't Make Me Think) */}

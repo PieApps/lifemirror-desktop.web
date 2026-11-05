@@ -109,10 +109,10 @@ export const App: React.FC = () => {
         ) : (
           <>
             <HeroSection />
-            <ComparisonSection />
             <WhyLifeMirror />
-            <ScreenshotGallery />
+            <ComparisonSection />
             <SCurveDemo />
+            <ScreenshotGallery />
             <InterdictionDemo />
             <LocalAiSimulator />
             <FeatureGrid />

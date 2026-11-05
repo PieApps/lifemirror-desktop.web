@@ -155,7 +155,7 @@ export const ComparisonSection: React.FC = () => {
   return (
     <section id="comparison" className="py-24 px-6 max-w-7xl mx-auto border-t border-[var(--border-glass)]">
       {/* Header (Start With Why) */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
+      <div className="max-w-3xl mx-auto text-center mb-12">
         <span className="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold flex items-center justify-center gap-1.5 mb-3">
           <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
           The Privacy-First Difference
@@ -166,6 +166,29 @@ export const ComparisonSection: React.FC = () => {
         <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed">
           Most productivity tools monitor you like corporate spyware, sending your window titles, private code repositories, and browsing history to remote cloud servers. LifeMirror was built on a simple guarantee: <strong className="text-[var(--text-primary)]">your focus data stays on your machine, always.</strong>
         </p>
+      </div>
+
+      {/* Don't Make Me Think: 3-Second Summary Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-10 text-left">
+        <div className="p-4 rounded-xl bg-rose-500/5 border border-rose-500/15">
+          <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Cloud Trackers</div>
+          <div className="text-sm font-semibold text-[var(--text-primary)] mb-1">Corporate Cloud Telemetry</div>
+          <p className="text-xs text-[var(--text-muted)]">Keystrokes &amp; URLs stored on company AWS servers • $120–$240/yr recurring fees.</p>
+        </div>
+
+        <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/15">
+          <div className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider mb-1">Screen Recorders</div>
+          <div className="text-sm font-semibold text-[var(--text-primary)] mb-1">Heavy Video Archives</div>
+          <p className="text-xs text-[var(--text-muted)]">Gigabytes of video overhead • Continuous GPU battery drain • Cloud AI processing.</p>
+        </div>
+
+        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 ring-1 ring-emerald-500/20">
+          <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5" /> LifeMirror Desktop
+          </div>
+          <div className="text-sm font-semibold text-[var(--text-primary)] mb-1">100% Local Sovereignty</div>
+          <p className="text-xs text-[var(--text-secondary)]">SQLCipher encrypted on disk • Zero open network ports • $0 Free &amp; Open-Source (MIT).</p>
+        </div>
       </div>
 
       {/* Desktop / Tablet Comparison Table (Don't Make Me Think: Instant visual scan) */}

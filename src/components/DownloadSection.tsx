@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, Monitor, Apple, Terminal, CheckCircle, Cpu, HardDrive, Globe, Smartphone, ExternalLink, Github, Sparkles, ShieldCheck, Info, Copy, Check } from 'lucide-react';
 import { APP_LINKS } from '../constants/links';
 
 export const DownloadSection: React.FC = () => {
   const [copiedCmd, setCopiedCmd] = useState<string | null>(null);
+  const [detectedOs, setDetectedOs] = useState<'Windows' | 'macOS' | 'Linux'>('Linux');
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    if (userAgent.includes('win')) setDetectedOs('Windows');
+    else if (userAgent.includes('mac')) setDetectedOs('macOS');
+    else setDetectedOs('Linux');
+  }, []);
 
   const copyToClipboard = (cmd: string) => {
     navigator.clipboard.writeText(cmd);
@@ -26,10 +34,20 @@ export const DownloadSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Platform Cards */}
+      {/* Platform Cards (Don't Make Me Think: Highlight detected OS automatically) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16 text-left">
         {/* Windows Card */}
-        <div className="glass-card p-8 border border-[var(--border-glass)] hover:border-violet-500/40 relative group">
+        <div className={`glass-card p-8 border relative group transition-all ${
+          detectedOs === 'Windows' 
+            ? 'border-violet-500/80 shadow-2xl shadow-violet-500/15 ring-2 ring-violet-500/30' 
+            : 'border-[var(--border-glass)] hover:border-violet-500/40'
+        }`}>
+          {detectedOs === 'Windows' && (
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-violet-600 text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5 whitespace-nowrap">
+              <Check className="w-3 h-3" />
+              <span>Recommended For Your System</span>
+            </div>
+          )}
           <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 text-blue-400">
             <Monitor className="w-6 h-6" />
           </div>
@@ -64,7 +82,17 @@ export const DownloadSection: React.FC = () => {
         </div>
 
         {/* macOS Card */}
-        <div className="glass-card p-8 border border-[var(--border-glass)] hover:border-violet-500/40 relative group">
+        <div className={`glass-card p-8 border relative group transition-all ${
+          detectedOs === 'macOS' 
+            ? 'border-violet-500/80 shadow-2xl shadow-violet-500/15 ring-2 ring-violet-500/30' 
+            : 'border-[var(--border-glass)] hover:border-violet-500/40'
+        }`}>
+          {detectedOs === 'macOS' && (
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-violet-600 text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5 whitespace-nowrap">
+              <Check className="w-3 h-3" />
+              <span>Recommended For Your System</span>
+            </div>
+          )}
           <div className="w-12 h-12 rounded-2xl bg-gray-500/10 border border-gray-500/20 flex items-center justify-center mb-6 text-[var(--text-primary)]">
             <Apple className="w-6 h-6" />
           </div>
@@ -99,7 +127,17 @@ export const DownloadSection: React.FC = () => {
         </div>
 
         {/* Linux Card */}
-        <div className="glass-card p-8 border border-[var(--border-glass)] hover:border-violet-500/40 relative group">
+        <div className={`glass-card p-8 border relative group transition-all ${
+          detectedOs === 'Linux' 
+            ? 'border-violet-500/80 shadow-2xl shadow-violet-500/15 ring-2 ring-violet-500/30' 
+            : 'border-[var(--border-glass)] hover:border-violet-500/40'
+        }`}>
+          {detectedOs === 'Linux' && (
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-violet-600 text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5 whitespace-nowrap">
+              <Check className="w-3 h-3" />
+              <span>Recommended For Your System</span>
+            </div>
+          )}
           <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400">
             <Terminal className="w-6 h-6" />
           </div>

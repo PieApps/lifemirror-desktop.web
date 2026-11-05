@@ -14,22 +14,22 @@ export const FaqSection: React.FC = () => {
     {
       category: 'Setup',
       question: 'Why do I see a security warning when opening LifeMirror Desktop on Windows or macOS?',
-      answer: 'LifeMirror Desktop is an independent open-source project distributed directly without paid commercial signing certificates. Because operating systems flag unsigned web downloads by default, you may see Microsoft Defender SmartScreen ("Windows protected your PC") or macOS Gatekeeper. On Windows, click "More info" → "Run anyway". On macOS Sequoia (15+), open the app once to trigger the prompt, then open System Settings → Privacy & Security, scroll down to the Security section, and click "Open Anyway" (or run "xattr -dr com.apple.quarantine \'/Applications/LifeMirror Desktop.app\'" in Terminal). All code is fully open-source on GitHub, zero telemetry is collected, and all data remains encrypted on your local machine.',
+      answer: 'Because release binaries are distributed directly as independent open-source software without paid corporate certificates. Operating systems flag unsigned direct downloads by default. On Windows, click "More info" → "Run anyway". On macOS Sequoia (15+), open the app once, then open System Settings → Privacy & Security, scroll down to Security, and click "Open Anyway" (or run "xattr -dr com.apple.quarantine \'/Applications/LifeMirror Desktop.app\'" in Terminal). All code is 100% open-source on GitHub with zero telemetry.',
     },
     {
       category: 'Setup',
       question: 'Do I need Ollama or local AI to use LifeMirror Desktop?',
-      answer: 'No! LifeMirror Desktop works 100% standalone right out of the box. Continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, manual reflection notes, system tray controls, and regex focus shields work completely without Ollama or any AI. Ollama is strictly an optional enhancement if you choose to enable automated AI reflection cards and local chat.',
+      answer: 'No. LifeMirror Desktop works 100% standalone out of the box. Continuous OS focus tracking, serpentine S-Curve timeline visualization, browser session grouping, manual reflection notes, system tray controls, and regex focus shields work completely without Ollama or any AI. Ollama is strictly an optional enhancement if you choose to enable automated AI reflection cards and local chat.',
     },
     {
       category: 'Setup',
       question: 'Do I need a high-end GPU or powerful computer to run LifeMirror Desktop?',
-      answer: 'Not at all! Because LifeMirror Desktop is built natively with Rust and Tauri 2.0, the core application is ultra-lightweight (~15MB installer, <50MB RAM). It runs smoothly on any standard laptop or desktop without needing a dedicated GPU or high-end CPU. A GPU is only relevant if you voluntarily choose to run Ollama for local LLMs.',
+      answer: 'Not at all. LifeMirror Desktop is built natively in Rust with Tauri 2.0. The core application is ultra-lightweight (~15MB installer, <50MB RAM). It runs smoothly on any basic laptop or desktop without needing a dedicated GPU or high-end CPU. A GPU is only relevant if you voluntarily choose to run Ollama for local LLMs.',
     },
     {
       category: 'Ecosystem',
       question: 'Where can I install the companion browser extension?',
-      answer: 'The official LifeMirror Desktop Companion Extension is available directly on the Chrome Web Store. It works seamlessly across Google Chrome, Brave, Microsoft Edge, Arc, Opera, Vivaldi, and all Chromium browsers via secure Native Messaging stdio pipes with zero open network ports.',
+      answer: 'Directly from the official Chrome Web Store. It works seamlessly across Google Chrome, Brave, Microsoft Edge, Arc, Opera, Vivaldi, and all Chromium browsers via secure Native Messaging stdio pipes with zero open network ports.',
     },
     {
       category: 'Ecosystem',
@@ -39,17 +39,17 @@ export const FaqSection: React.FC = () => {
     {
       category: 'Privacy',
       question: 'Does any of my activity data or browser history leave my computer?',
-      answer: 'Zero bytes ever leave your host machine. LifeMirror Desktop operates under a strict zero-telemetry guarantee. Your activity logs are encrypted on your disk using page-level OpenSSL SQLCipher encryption (`rusqlite`). There are no external cloud servers, remote analytics hooks, or network tracking endpoints.',
+      answer: 'Zero bytes ever leave your machine. LifeMirror Desktop operates under a certified zero-telemetry guarantee. Your activity logs are encrypted on disk using page-level OpenSSL SQLCipher encryption (`rusqlite`). There are no external cloud servers, remote analytics hooks, or network tracking endpoints.',
     },
     {
       category: 'Privacy',
       question: 'How does Chrome browser tab tracking work without opening network ports?',
-      answer: 'Unlike web tools that spin up unencrypted local HTTP servers or WebSockets, LifeMirror Desktop connects to Chrome via Chrome Native Messaging API over secure stdio stdin/stdout pipes. No listening network ports are exposed on your computer.',
+      answer: 'Through Chrome\'s Native Messaging API over secure stdio stdin/stdout pipes. Unlike web-based trackers that spin up unencrypted local HTTP servers or WebSockets, LifeMirror opens zero listening network ports on your machine.',
     },
     {
       category: 'Licensing',
       question: 'Is LifeMirror Desktop completely free to use?',
-      answer: 'LifeMirror Desktop is 100% free and open-source under the MIT license. There are no subscriptions, ads, or paywalls. If you find the utility valuable and want to support our independent development, you can voluntarily buy us a coffee or sponsor us on GitHub.',
+      answer: 'Yes, 100% free and open-source forever under the MIT license. There are no subscriptions, ads, or feature paywalls. If you find the utility valuable and want to support our independent development, you can voluntarily buy us a coffee or sponsor us on GitHub.',
     },
     {
       category: 'Features',

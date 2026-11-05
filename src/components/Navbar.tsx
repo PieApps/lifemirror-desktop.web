@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Github, Sun, Moon, Download, Sparkles } from 'lucide-react';
+import { Shield, Github, Sun, Moon, Download, Sparkles, Menu, X } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 import { APP_LINKS } from '../constants/links';
 
@@ -11,6 +11,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigateToSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +26,20 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
       e.preventDefault();
       onNavigateToSection(targetId);
     }
+    setIsMobileMenuOpen(false);
   };
+
+  const navLinks = [
+    { id: 'why-lifemirror', label: 'Why LifeMirror' },
+    { id: 'comparison', label: 'Compare' },
+    { id: 'timeline-demo', label: 'Timeline' },
+    { id: 'features', label: 'Features' },
+    { id: 'ai-experience', label: 'AI (Optional)' },
+    { id: 'privacy', label: 'Privacy' },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'faq', label: 'FAQ' },
+    { id: 'downloads', label: 'Downloads' },
+  ];
 
   return (
     <nav
@@ -54,25 +68,27 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
           </div>
         </a>
 
-        {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-[var(--text-secondary)]">
-          <a href="#comparison" onClick={(e) => handleLinkClick('comparison', e)} className="hover:text-violet-500 transition-colors">Why LifeMirror</a>
-          <a href="#timeline-demo" onClick={(e) => handleLinkClick('timeline-demo', e)} className="hover:text-violet-500 transition-colors">Timeline</a>
-          <a href="#features" onClick={(e) => handleLinkClick('features', e)} className="hover:text-violet-500 transition-colors">Features</a>
-          <a href="#ai-experience" onClick={(e) => handleLinkClick('ai-experience', e)} className="hover:text-violet-500 transition-colors">AI (Optional)</a>
-          <a href="#privacy" onClick={(e) => handleLinkClick('privacy', e)} className="hover:text-violet-500 transition-colors">Privacy</a>
-          <a href="#pricing" onClick={(e) => handleLinkClick('pricing', e)} className="hover:text-violet-500 transition-colors">Pricing</a>
-          <a href="#faq" onClick={(e) => handleLinkClick('faq', e)} className="hover:text-violet-500 transition-colors">FAQ</a>
-          <a href="#downloads" onClick={(e) => handleLinkClick('downloads', e)} className="hover:text-violet-500 transition-colors">Downloads</a>
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-[var(--text-secondary)]">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(e) => handleLinkClick(link.id, e)}
+              className="hover:text-violet-500 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={APP_LINKS.github.repo}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm"
+            className="p-2 sm:p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm"
             aria-label="GitHub Repository"
             title="GitHub Repository"
           >
@@ -81,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
 
           <button
             onClick={onToggleTheme}
-            className="p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] transition-all shadow-sm cursor-pointer"
             aria-label="Toggle Theme"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-violet-600" />}
@@ -90,13 +106,49 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, onNavigate
           <a
             href="#downloads"
             onClick={(e) => handleLinkClick('downloads', e)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium text-sm hover:from-violet-500 hover:to-indigo-500 shadow-lg shadow-violet-500/25 transition-all hover:scale-105"
+            className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium text-sm hover:from-violet-500 hover:to-indigo-500 shadow-lg shadow-violet-500/25 transition-all hover:scale-105"
           >
             <Download className="w-4 h-4" />
             <span>Download</span>
           </a>
+
+          {/* Mobile Menu Hamburger (Don't Make Me Think) */}
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="lg:hidden p-2 rounded-xl bg-[var(--bg-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all cursor-pointer"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer (Don't Make Me Think: Instant scannable section jump) */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden mt-3 mx-4 p-4 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-glass)] shadow-2xl backdrop-blur-2xl flex flex-col gap-2 font-medium text-sm">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(e) => handleLinkClick(link.id, e)}
+              className="py-2.5 px-3 rounded-xl hover:bg-violet-500/15 hover:text-violet-400 text-[var(--text-secondary)] transition-all"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="pt-2 border-t border-[var(--border-glass)] mt-1">
+            <a
+              href="#downloads"
+              onClick={(e) => handleLinkClick('downloads', e)}
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold text-center flex items-center justify-center gap-2 shadow-lg shadow-violet-500/25"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download LifeMirror Free</span>
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
