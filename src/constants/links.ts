@@ -9,12 +9,12 @@ export const APP_LINKS = {
     issues: 'https://github.com/PieApps/lifemirror-desktop/issues',
   },
   downloads: {
-    windowsExe: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_x64-setup.exe',
-    windowsMsi: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_x64_en-US.msi',
-    macDmg: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_aarch64.dmg',
-    macAppTarGz: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_aarch64.app.tar.gz',
-    linuxDeb: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_amd64.deb',
-    linuxAppImage: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.0/lifemirror-desktop_1.4.0_amd64.AppImage',
+    windowsExe: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_x64-setup.exe',
+    windowsMsi: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_x64_en-US.msi',
+    macDmg: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_aarch64.dmg',
+    macAppTarGz: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_aarch64.app.tar.gz',
+    linuxDeb: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_amd64.deb',
+    linuxAppImage: 'https://github.com/PieApps/lifemirror-desktop/releases/download/v1.4.1/lifemirror-desktop_1.4.1_amd64.AppImage',
   },
   ecosystem: {
     chromeExtension: 'https://chromewebstore.google.com/detail/lifemirror-desktop/pblffjiaheggbamkjaojabdaemkflhmm',
