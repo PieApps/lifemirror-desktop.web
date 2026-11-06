@@ -24,7 +24,7 @@ export const DownloadSection: React.FC = () => {
       <div className="mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold mb-3">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Latest Release v1.3.4 • Open-Source MIT</span>
+          <span>Latest Release v1.4.0 • Open-Source MIT</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] mt-2 mb-4">
           Download LifeMirror Desktop
